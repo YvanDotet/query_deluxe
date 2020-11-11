@@ -28,7 +28,7 @@
 						</group>
 
 						<group colspan="4">
-							<field name="tips_description" attrs="{'invisible':[('tips','=',False)]}"/>
+							<field name="tips_description" readonly="1" attrs="{'invisible':[('tips','=',False)]}"/>
 						</group>
 					</group>
 
