@@ -54,7 +54,6 @@ class QueryDeluxe(models.Model):
             try:
                 self.env.cr.execute(self.name)
             except Exception as e:
-                print(1)
                 raise UserError(e)
 
             try:
@@ -65,9 +64,7 @@ class QueryDeluxe(models.Model):
                 if True not in is_insides:
                     headers = [d[0] for d in self.env.cr.description]
                     datas = self.env.cr.fetchall()
-                    print(3)
             except Exception as e:
-                print(2)
                 raise UserError(e)
 
             rowcount = self.env.cr.rowcount
