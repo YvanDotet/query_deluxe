@@ -37,15 +37,17 @@
 					</group>
 					<button name="execute" type="object" string="Execute" class="oe_highlight"/>
 
-					<group>
-						<group colspan="4">
-							<field name="rowcount" readonly="1" nolabel="1"/>
-						</group>
+					<div style="overflow:visible !important;">
+						<group>
+							<group colspan="4">
+								<field name="rowcount" readonly="1" nolabel="1"/>
+							</group>
 
-						<group colspan="4">
-							<field name="html" readonly="1" nolabel="1"/>
+							<group colspan="4">
+								<field name="html" readonly="1" nolabel="1"/>
+							</group>
 						</group>
-					</group>
+					</div>
 
 					<group>
 						<field name="show_raw_output"/>
