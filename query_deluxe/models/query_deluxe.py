@@ -74,8 +74,8 @@ class QueryDeluxe(models.Model):
                 self.valid_query_name = self.name
                 self.raw_output = datas
 
-                header_html = "".join(["<th style='border: 1px solid'>"+header+"</th>" for header in headers])
-                header_html = "<tr>"+"<th style='background-color:white !important'/>"+header_html+"</tr>"
+                header_html = "".join(["<th style='border: 1px solid; text-align: center;'>"+header+"</th>" for header in headers])
+                header_html = "<tr>"+"<th style='background-color:white !important; text-align: center;'/>"+header_html+"</tr>"
 
                 body_html = ""
                 i = 0
