@@ -32,7 +32,6 @@ class QueryDeluxe(models.Model):
         }
 
     def print_xlsx(self):
-        print(4)
         try:
             import xlsxwriter
         except:
@@ -46,7 +45,6 @@ class QueryDeluxe(models.Model):
                   "command prompt. \n\n"
                   "After that please relaunch your odoo."))
 
-        print(8)
         return self.env.ref('query_deluxe.action_print_xlsx').report_action(self)
 
     def copy_query(self):

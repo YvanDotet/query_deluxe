@@ -7,7 +7,6 @@ class QueryDeluxeXlsx(models.AbstractModel):
     _description = "Query Deluxe XLSX Report"
 
     def generate_xlsx_report(self, workbook, data, queries):
-        print("d")
         bold = workbook.add_format({"bold": True})
         grey = workbook.add_format({"bg_color": '#D3D3D3'})
         white = workbook.add_format({"bg_color": 'white'})
