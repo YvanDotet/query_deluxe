@@ -1,5 +1,5 @@
 {
-        'name': 'PostgreSQL Query Deluxe',
+        'name': 'PostgreSQL Query Deluxe | PDF & SQL export',
         'description': 'Execute postgreSQL query into Odoo interface',
         'author': 'Yvan Dotet',
         'depends': ['base','mail'],
