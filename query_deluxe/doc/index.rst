@@ -10,8 +10,6 @@ The result is correctly presented in a table form.
 
 You can also make UPDATE, DELETE, CREATE, INSERT, ALTER and DROP statements.
 
-You can export results in PDF an XLSX format.
-
 Usage
 =====
 

@@ -31,22 +31,6 @@ class QueryDeluxe(models.Model):
             },
         }
 
-    def print_xlsx(self):
-        try:
-            import xlsxwriter
-        except:
-            raise UserError(
-                _("The Python module 'xlsxwriter' is not install on your system/environment to print xlsx report."
-                  "\n For example, on ubuntu the command line is \n\n"
-                  "'pip3 install xlsxwriter' \n\n"
-                  "Also tried \n\n"
-                  "'pip install xlsxwriter'. \n\n"
-                  "For windows, follow tutorials on the internet to install 'pip' and then 'xlsxwriter' with your "
-                  "command prompt. \n\n"
-                  "After that please relaunch your odoo and refresh your page."))
-
-        return self.env.ref('query_deluxe.action_print_xlsx').report_action(self)
-
     def copy_query(self):
         if self.tips:
             self.name = self.tips.name
