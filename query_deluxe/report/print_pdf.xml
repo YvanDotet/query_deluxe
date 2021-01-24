@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <template id="pdf">
+        <t t-call="web.html_container">
+            <div class="header"/>
+
+            <div class="article">
+                <div style="text-align:center">
+                    <t t-esc="query_name"/>
+                </div>
+
+                <div>
+                    <table style="text-align: center">
+                        <thead style="background-color: lightgrey">
+                            <tr>
+                                <th style='background-color:white !important'/>
+
+                                <t t-foreach="headers" t-as="header">
+                                    <th style='border: 1px solid'>
+                                        <t t-esc="str(header)"/>
+                                    </th>
+                                </t>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <t t-foreach="bodies" t-as="body">
+                                <tr>
+                                    <td style='border-right: 3px double; border-bottom: 1px solid; background-color: yellow'>
+                                        <t t-esc="1+body_index"/>
+                                    </td>
+
+                                    <t t-foreach="body" t-as="value">
+                                        <td t-att-style="'background-color: {0}; border: 1px solid'.format('cyan' if body_index%2==1 else 'white')">
+                                            <t t-esc="str(value) if (value is not None) else ''"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="footer"/>
+        </t>
+    </template>
+
+    <record id="paperformat_landscape" model="report.paperformat">
+        <field name="name">Landscape format for pdf</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">3</field>
+        <field name="margin_bottom">3</field>
+        <field name="margin_left">3</field>
+        <field name="margin_right">3</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">3</field>
+        <field name="dpi">80</field>
+    </record>
+
+    <record id="paperformat_portrait" model="report.paperformat">
+        <field name="name">Portrait format for pdf</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">3</field>
+        <field name="margin_bottom">3</field>
+        <field name="margin_left">3</field>
+        <field name="margin_right">3</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">3</field>
+        <field name="dpi">80</field>
+    </record>
+
+    <record id="action_print_pdf" model="ir.actions.report">
+        <field name="name">Query result</field>
+        <field name="model">pdforientation</field>
+        <field name="report_name">query_deluxe.pdf</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="paperformat_id" ref="query_deluxe.paperformat_landscape"/>
+    </record>
+</odoo>
