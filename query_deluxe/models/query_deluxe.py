@@ -31,6 +31,22 @@ class QueryDeluxe(models.Model):
             },
         }
 
+    def print_xlsx(self):
+        try:
+            import xlsxwriter
+        except:
+            raise UserError(
+                _("The Python module 'xlsxwriter' is not install on your system/environment to print xlsx report."
+                  "\n For example, on ubuntu the command line is \n\n"
+                  "'pip3 install xlsxwriter' \n\n"
+                  "Also tried \n\n"
+                  "'pip install xlsxwriter'. \n\n"
+                  "For windows, follow tutorials on the internet to install 'pip' and then 'xlsxwriter' with your "
+                  "command prompt. \n\n"
+                  "After that please relaunch your odoo and refresh your page."))
+
+        return self.env.ref('query_deluxe.action_print_xlsx').report_action(self)
+
     def copy_query(self):
         if self.tips:
             self.name = self.tips.name
@@ -74,7 +90,7 @@ class QueryDeluxe(models.Model):
                 self.valid_query_name = self.name
                 self.raw_output = datas
 
-                header_html = "".join(["<th style='border: 1px solid'>"+header+"</th>" for header in headers])
+                header_html = "".join(["<th style='border: 1px solid'>"+str(header)+"</th>" for header in headers])
                 header_html = "<tr>"+"<th style='background-color:white !important'/>"+header_html+"</tr>"
 
                 body_html = ""
@@ -83,7 +99,7 @@ class QueryDeluxe(models.Model):
                     i += 1
                     body_line = "<tr>"+"<td style='border-right: 3px double; border-bottom: 1px solid; background-color: yellow'>{0}</td>".format(i)
                     for value in data:
-                        body_line += "<td style='border: 1px solid; background-color: {0}'>{1}</td>".format('cyan' if i%2 == 0 else 'white', value)
+                        body_line += "<td style='border: 1px solid; background-color: {0}'>{1}</td>".format('cyan' if i%2 == 0 else 'white', str(value) if (value is not None) else '')
 
                     body_line += "</tr>"
                     body_html += body_line
@@ -104,6 +120,7 @@ class QueryDeluxe(models.Model):
 class TipsQueries(models.Model):
     _name = 'tipsqueries'
     _description = "Tips for queries"
+    _order = 'create_date desc, id'
 
     name = fields.Char(string='Query', required=True)
     description = fields.Text(string="Description")

@@ -69,4 +69,12 @@
         <field name="name">DROP TABLE mytable;</field>
         <field name="description">Drop the table 'mytable'</field>
     </record>
+
+    <record id="action_print_xlsx" model="ir.actions.report">
+        <field name="name">Print XLSX</field>
+        <field name="model">querydeluxe</field>
+        <field name="report_name">query_deluxe.query_deluxe_xlsx</field>
+        <field name="report_type">xlsx</field>
+        <field name="print_report_name">(object.name)</field>
+    </record>
 </odoo>

@@ -67,21 +67,21 @@ msgstr "Copier"
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__create_uid
 #: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__create_date
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__create_date
 #: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Créé le"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__tips_description
 #: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__description
 #: model_terms:ir.ui.view,arch_db:query_deluxe.tips_queries_view_tree
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__display_name
@@ -101,7 +101,7 @@ msgstr "Exemples"
 #. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
 msgid "Execute"
-msgstr ""
+msgstr "Exécuter"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_follower_ids
@@ -377,3 +377,37 @@ msgstr ""
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__valid_query_name
 msgid "Valid Query Name"
 msgstr ""
+
+#. module: query_deluxe
+#: code:addons/query_deluxe/models/query_deluxe.py:0
+#, python-format
+msgid ""
+"The Python module 'xlsxwriter' is not install on your system/environment to "
+"print xlsx report.\n"
+" For example, on ubuntu the command line is \n"
+"\n"
+"'pip3 install xlsxwriter' \n"
+"\n"
+"Also tried \n"
+"\n"
+"'pip install xlsxwriter'. \n"
+"\n"
+"For windows, follow tutorials on the internet to install 'pip' and then "
+"'xlsxwriter' with your command prompt. \n"
+"\n"
+"After that please relaunch your odoo and refresh your page."
+msgstr ""
+"Le module Python 'xlsxwriter' n’est pas installé sur votre système/"
+"environnement pour imprimer le rapport xlsx.\n"
+" Par exemple, sur ubuntu, la ligne de commande est \n"
+"\n"
+"'pip3 install xlsxwriter' \n"
+"\n"
+"Essayez également \n"
+"\n"
+"'pip install xlsxwriter'. \n"
+"\n"
+"Pour windows, suivez les tutoriels sur Internet pour installer 'pip' puis "
+"'xlsxwriter' avec votre invite de commande. \n"
+"\n"
+"Après cela merci de relancer votre odoo et de rafraîchir votre page."
