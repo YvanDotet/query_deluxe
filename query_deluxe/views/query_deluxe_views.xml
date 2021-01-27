@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+
+<odoo>
+	<record id="query_deluxe_view_tree" model="ir.ui.view">
+		<field name="name">Type a query tree</field>
+		<field name="model">querydeluxe</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name" string="Query"/>
+			</tree>
+		</field>
+	</record>
+
+	<record id="query_deluxe_view_form" model="ir.ui.view">
+		<field name="name">Type a query form</field>
+		<field name="model">querydeluxe</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>
+					<button name="print_result" string="Print PDF" type="object" attrs="{'invisible':[('raw_output','in',['',[],False])]}" style="color: blue !important"/>
+				</header>
+
+				<sheet>
+					<group string="Examples">
+						<group colspan="4">
+							<field name="tips" widget="selection" nolabel="1"/>
+							<button name="copy_query" type="object" style="color:green" string="Copy" attrs="{'invisible':[('tips','=',False)]}"/>
+						</group>
+
+						<group colspan="4">
+							<field name="tips_description" attrs="{'invisible':[('tips','=',False)]}"/>
+						</group>
+					</group>
+
+					<group string="Type a query" colspan="4">
+						<field name="name" nolabel="1" placeholder="SELECT * FROM res_partner"/>
+					</group>
+					<button name="execute" type="object" string="Execute" class="oe_highlight"/>
+
+					<div style="overflow:visible !important;">
+						<group>
+							<group colspan="4">
+								<field name="rowcount" readonly="1" nolabel="1"/>
+							</group>
+
+							<group colspan="4">
+								<field name="html" readonly="1" nolabel="1"/>
+							</group>
+						</group>
+					</div>
+
+					<group>
+						<field name="show_raw_output"/>
+						<field name="raw_output" attrs="{'invisible':[('show_raw_output','=',False)]}"/>
+					</group>
+
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"/>
+						<field name="activity_ids" widget="mail_activity"/>
+						<field name="message_ids" widget="mail_thread"/>
+					</div>
+				</sheet>
+
+<!--				<notebook>-->
+<!--					<page name="result" string="Result">-->
+
+<!--					</page>-->
+<!--				</notebook>-->
+			</form>
+		</field>
+	</record>
+
+	<record model='ir.actions.act_window' id='query_deluxe_submenu_querydeluxe_action'>
+        <field name="name">Queries</field>
+        <field name="res_model">querydeluxe</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+	<!--
+	////
+	////
+	////
+	-->
+
+	<record id="tips_queries_view_tree" model="ir.ui.view">
+		<field name="name">Memorize a query tree</field>
+		<field name="model">tipsqueries</field>
+		<field name="arch" type="xml">
+			<tree editable="top">
+				<field name="name" string="Query"/>
+				<field name="description" string="Description"/>
+			</tree>
+		</field>
+	</record>
+
+	<record id="tips_queries_view_search" model="ir.ui.view">
+        <field name="name">Search a query</field>
+        <field name="model">tipsqueries</field>
+        <field name="arch" type="xml">
+            <search string="Search">
+                <field name="name"/>
+				<field name="description"/>
+			</search>
+		</field>
+	</record>
+
+	<record model='ir.actions.act_window' id='query_deluxe_submenu_tipsqueries_action'>
+        <field name="name">Examples</field>
+        <field name="res_model">tipsqueries</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+	<menuitem id="query_deluxe_menu" name="Query Deluxe" sequence="-1" groups="query_deluxe.group_query_deluxe" web_icon="query_deluxe,static/description/icon.png"/>
+
+	<menuitem id="query_deluxe_submenu_querydeluxe" parent="query_deluxe_menu" action="query_deluxe_submenu_querydeluxe_action" sequence="-1" groups="query_deluxe.group_query_deluxe"/>
+	<menuitem id="query_deluxe_submenu_tipsqueries" parent="query_deluxe_menu" action="query_deluxe_submenu_tipsqueries_action" sequence="10" groups="query_deluxe.group_query_deluxe"/>
+</odoo>

@@ -1,0 +1,379 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* query_deluxe
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-09 21:51+0000\n"
+"PO-Revision-Date: 2020-11-09 22:52+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr_BE\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#. module: query_deluxe
+#: model:res.groups,name:query_deluxe.group_query_deluxe
+msgid "Access query_deluxe"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: query_deluxe
+#: model_terms:ir.ui.view,arch_db:query_deluxe.pdforientation_form
+msgid "Cancel"
+msgstr ""
+
+#. module: query_deluxe
+#: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
+msgid "Copy"
+msgstr "Copier"
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__create_uid
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__create_uid
+#: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__create_date
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__create_date
+#: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__tips_description
+#: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__description
+#: model_terms:ir.ui.view,arch_db:query_deluxe.tips_queries_view_tree
+msgid "Description"
+msgstr "Description"
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__display_name
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__display_name
+#: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.actions.act_window,name:query_deluxe.query_deluxe_submenu_tipsqueries_action
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__tips
+#: model:ir.ui.menu,name:query_deluxe.query_deluxe_submenu_tipsqueries
+#: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
+msgid "Examples"
+msgstr "Exemples"
+
+#. module: query_deluxe
+#: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
+msgid "Execute"
+msgstr "Exécuter"
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__html
+msgid "HTML"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__id
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__id
+#: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__id
+msgid "ID"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__message_needaction
+#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: query_deluxe
+#: code:addons/query_deluxe/wizard/pdforientation.py:0
+#, python-format
+msgid "Landscape"
+msgstr "Paysage"
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_pdforientation____last_update
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe____last_update
+#: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__write_uid
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__write_uid
+#: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__write_date
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__write_date
+#: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__orientation
+msgid "PDF orientation"
+msgstr "Orientation du PDF"
+
+#. module: query_deluxe
+#: code:addons/query_deluxe/wizard/pdforientation.py:0
+#, python-format
+msgid "Portrait"
+msgstr "Portrait"
+
+#. module: query_deluxe
+#: model:ir.model,name:query_deluxe.model_querydeluxe
+msgid "Postgres queries from Odoo interface"
+msgstr "Requête PostgreSQL depuis l'interface Odoo"
+
+#. module: query_deluxe
+#: model_terms:ir.ui.view,arch_db:query_deluxe.pdforientation_form
+msgid "Print"
+msgstr ""
+
+#. module: query_deluxe
+#: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
+msgid "Print PDF"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.actions.act_window,name:query_deluxe.query_deluxe_submenu_querydeluxe_action
+#: model:ir.ui.menu,name:query_deluxe.query_deluxe_submenu_querydeluxe
+msgid "Queries"
+msgstr "Requêtes"
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__query_name
+#: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__name
+#: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_tree
+#: model_terms:ir.ui.view,arch_db:query_deluxe.tips_queries_view_tree
+msgid "Query"
+msgstr "Requête"
+
+#. module: query_deluxe
+#: model:ir.ui.menu,name:query_deluxe.query_deluxe_menu
+msgid "Query Deluxe"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.actions.report,name:query_deluxe.action_print_pdf
+msgid "Query result"
+msgstr "SELECT * FROM pg_catalog.pg_tables;"
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__raw_output
+msgid "Raw output"
+msgstr "Données brutes"
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__rowcount
+msgid "Rowcount"
+msgstr ""
+
+#. module: query_deluxe
+#: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
+msgid "SELECT * FROM res_partner"
+msgstr ""
+
+#. module: query_deluxe
+#: model_terms:ir.ui.view,arch_db:query_deluxe.tips_queries_view_search
+msgid "Search"
+msgstr ""
+
+#. module: query_deluxe
+#: code:addons/query_deluxe/models/query_deluxe.py:0
+#, python-format
+msgid "Select orientation of the PDF's result"
+msgstr "Sélectionner l'orientation du PDF"
+
+#. module: query_deluxe
+#: model:ir.model,name:query_deluxe.model_pdforientation
+msgid "Select the orientation of the pdf"
+msgstr "Sélectionner l'orientation du PDF"
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__show_raw_output
+msgid "Show the raw output of the query"
+msgstr "Montrer les données brutes de la requête"
+
+#. module: query_deluxe
+#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model,name:query_deluxe.model_tipsqueries
+msgid "Tips for queries"
+msgstr ""
+
+#. module: query_deluxe
+#: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
+msgid "Type a query"
+msgstr "Ecrivez une requête"
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__name
+msgid "Type a query : "
+msgstr "Ecrivez une requête :"
+
+#. module: query_deluxe
+#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__valid_query_name
+msgid "Valid Query Name"
+msgstr ""
