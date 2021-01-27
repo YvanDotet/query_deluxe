@@ -18,7 +18,7 @@
 
                                 <t t-foreach="headers" t-as="header">
                                     <th style='border: 1px solid'>
-                                        <t t-esc="header"/>
+                                        <t t-esc="str(header)"/>
                                     </th>
                                 </t>
                             </tr>
@@ -33,7 +33,7 @@
 
                                     <t t-foreach="body" t-as="value">
                                         <td t-att-style="'background-color: {0}; border: 1px solid'.format('cyan' if body_index%2==1 else 'white')">
-                                            <t t-esc="value"/>
+                                            <t t-esc="str(value) if (value is not None) else ''"/>
                                         </td>
                                     </t>
                                 </tr>
