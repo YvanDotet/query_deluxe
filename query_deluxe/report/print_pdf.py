@@ -6,11 +6,13 @@ class PrintPdfParser(models.AbstractModel):
     _description = 'Parser for my pdf result'
 
     @api.model
-    def _get_report_values(self, docids, data=None):
+    def get_report_values(self, docids, data=None):
         # append more informations to data
         print(docids)
         print(data)
 
         return {
-
+            'query_name': data.get('query_name'),
+            'headers': data.get('headers'),
+            'bodies': data.get('bodies'),
         }
