@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <record id="pdforientation_form" model="ir.ui.view">
+        <field name="name">pdforientation.form</field>
+        <field name="model">pdforientation</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="query_name" invisible="0" readonly="1"/>
+                        <field name="orientation" widget="radio" options="{'horizontal': true}"/>
+					</group>
+				</sheet>
+
+                <footer>
+                    <button string="Print" name="print_pdf" type="object" class="oe_highlight"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
