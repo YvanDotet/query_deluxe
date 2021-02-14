@@ -67,21 +67,21 @@ msgstr "Copier"
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__create_uid
 #: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__create_date
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__create_date
 #: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Créé le"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__tips_description
 #: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__description
 #: model_terms:ir.ui.view,arch_db:query_deluxe.tips_queries_view_tree
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__display_name
@@ -101,7 +101,7 @@ msgstr "Exemples"
 #. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
 msgid "Execute"
-msgstr ""
+msgstr "Exécuter"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_follower_ids
