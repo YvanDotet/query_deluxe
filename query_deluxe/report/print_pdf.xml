@@ -7,8 +7,6 @@
 
             <div class="article">
                 <div style="text-align:center">
-                    4
-                    <t t-esc="data"/>
                     <t t-esc="query_name"/>
                 </div>
 
