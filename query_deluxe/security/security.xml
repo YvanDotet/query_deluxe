@@ -4,7 +4,7 @@
         <field name="name">Access query_deluxe</field>
     </record>
 
-    <record id="base.group_system" model="res.groups">
+   <!-- <record id="base.group_system" model="res.groups">
         <field name="implied_ids" eval="[(4, ref('query_deluxe.group_query_deluxe'))]"/>
-    </record>
+    </record>-->
 </odoo>
