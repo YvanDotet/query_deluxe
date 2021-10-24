@@ -14,6 +14,7 @@ class QueryDeluxe(models.Model):
     html = fields.Html(string='HTML')
 
     name = fields.Char(string='Type a query : ')
+    name2 = fields.Char(string='Type a query 2 : ')
     valid_query_name = fields.Char()
 
     show_raw_output = fields.Boolean(string='Show the raw output of the query')
