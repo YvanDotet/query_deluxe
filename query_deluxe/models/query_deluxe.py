@@ -13,13 +13,15 @@ class QueryDeluxe(models.Model):
     rowcount = fields.Text(string='Rowcount')
     html = fields.Html(string='HTML')
 
-    name = fields.Char(string='Type a query : ')
+    name = fields.Text(string='Type a query : ')
     valid_query_name = fields.Char()
 
     show_raw_output = fields.Boolean(string='Show the raw output of the query')
     raw_output = fields.Text(string='Raw output')
 
     def print_result(self):
+        self.ensure_one()
+
         return {
             'name': _("Select orientation of the PDF's result"),
             'view_mode': 'form',
@@ -32,10 +34,15 @@ class QueryDeluxe(models.Model):
         }
 
     def copy_query(self):
+        self.ensure_one()
+
         if self.tips:
             self.name = self.tips.name
 
     def execute(self):
+        self = self.sudo()
+        self.ensure_one()
+
         self.show_raw_output = False
         self.raw_output = ''
 
@@ -57,18 +64,14 @@ class QueryDeluxe(models.Model):
                 raise UserError(e)
 
             try:
-                no_fetching = ['update', 'delete', 'create', 'insert', 'alter', 'drop']
-                max_n = len(max(no_fetching))
-
-                is_insides = [(o in self.name.lower().strip()[:max_n]) for o in no_fetching]
-                if True not in is_insides:
+                if self.env.cr.description:
                     headers = [d[0] for d in self.env.cr.description]
                     datas = self.env.cr.fetchall()
             except Exception as e:
                 raise UserError(e)
 
             rowcount = self.env.cr.rowcount
-            self.rowcount = "{0} row{1} processed".format(rowcount, 's' if 1 < rowcount else '')
+            self.rowcount = _("{0} row{1} processed").format(rowcount, 's' if 1 < rowcount else '')
 
             if headers and datas:
                 self.valid_query_name = self.name
@@ -83,8 +86,10 @@ class QueryDeluxe(models.Model):
                     i += 1
                     body_line = "<tr>"+"<td style='border-right: 3px double; border-bottom: 1px solid; background-color: yellow'>{0}</td>".format(i)
                     for value in data:
-                        body_line += "<td style='border: 1px solid; background-color: {0}'>{1}</td>".format('cyan' if i%2 == 0 else 'white', str(value) if (value is not None) else '')
-
+                        display_value = ''
+                        if value is not None:
+                            display_value = str(value).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+                        body_line += "<td style='border: 1px solid; background-color: {0}'>{1}</td>".format('cyan' if i % 2 == 0 else 'white', display_value)
                     body_line += "</tr>"
                     body_html += body_line
 
@@ -106,5 +111,5 @@ class TipsQueries(models.Model):
     _description = "Tips for queries"
     _order = 'create_date desc, id'
 
-    name = fields.Char(string='Query', required=True)
-    description = fields.Text(string="Description")
+    name = fields.Text(string='Query', required=True)
+    description = fields.Text(string="Description", translate=True)
