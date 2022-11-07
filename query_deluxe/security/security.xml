@@ -7,4 +7,9 @@
     <record id="base.group_system" model="res.groups">
         <field name="implied_ids" eval="[(4, ref('query_deluxe.group_query_deluxe'))]"/>
     </record>
+
+    <record id="base.group_erp_manager" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('query_deluxe.group_query_deluxe'))]"/>
+    </record>
+
 </odoo>

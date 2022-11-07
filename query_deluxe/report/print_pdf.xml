@@ -3,7 +3,7 @@
 <odoo>
     <template id="pdf">
         <t t-call="web.html_container">
-            <div class="header"/>
+<!--            <div class="header"/>-->
 
             <div class="article">
                 <div style="text-align:center">
@@ -43,7 +43,7 @@
                 </div>
             </div>
 
-            <div class="footer"/>
+<!--            <div class="footer"/>-->
         </t>
     </template>
 
@@ -79,11 +79,19 @@
         <field name="dpi">80</field>
     </record>
 
-    <record id="action_print_pdf" model="ir.actions.report">
+    <record id="action_print_pdf_landscape" model="ir.actions.report">
         <field name="name">Query result</field>
         <field name="model">pdforientation</field>
         <field name="report_name">query_deluxe.pdf</field>
         <field name="report_type">qweb-pdf</field>
         <field name="paperformat_id" ref="query_deluxe.paperformat_landscape"/>
+    </record>
+
+    <record id="action_print_pdf_portrait" model="ir.actions.report">
+        <field name="name">Query result</field>
+        <field name="model">pdforientation</field>
+        <field name="report_name">query_deluxe.pdf</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="paperformat_id" ref="query_deluxe.paperformat_portrait"/>
     </record>
 </odoo>

@@ -12,22 +12,35 @@
 
     <record id="select_datname_pg_database" model="tipsqueries">
         <field name="name">SELECT datname FROM pg_database;</field>
-        <field name="description">List of all the databases inside that postgresQL</field>
+        <field name="description">List of all the databases inside that postgreSQL</field>
     </record>
 
     <record id="select_pg_user" model="tipsqueries">
         <field name="name">SELECT * FROM pg_user;</field>
-        <field name="description">List of all the users using that postgresQL</field>
+        <field name="description">List of all the users using that postgreSQL</field>
     </record>
 
     <record id="select_versions" model="tipsqueries">
         <field name="name">SELECT version();</field>
-        <field name="description">The version of that Postgresql</field>
+        <field name="description">The version of that postgreSQL</field>
     </record>
 
     <record id="select_sale_order" model="tipsqueries">
         <field name="name">SELECT * FROM sale_order WHERE partner_id IN (SELECT id FROM res_partner WHERE name ILIKE '%Johnson%') LIMIT 5;</field>
         <field name="description">Show only the 5 first records of sale.order's model where their client have 'Johnson' in their name</field>
+    </record>
+
+    <record id="with_product_table" model="tipsqueries">
+        <field name="name">
+            WITH temporary_table AS (
+                SELECT pt.id AS pt_id, pp.id AS pp_id
+                FROM product_template pt
+                LEFT JOIN product_product pp
+                ON pp.product_tmpl_id = pt.id
+            )
+            SELECT * FROM temporary_table ORDER BY pt_id;
+        </field>
+        <field name="description">Associate each product template with their product variant</field>
     </record>
 
     <record id="update_res_users_password" model="tipsqueries">
@@ -57,7 +70,7 @@
 
     <record id="insert_into_mytable" model="tipsqueries">
         <field name="name">INSERT INTO mytable VALUES (  30  ,  'first rec'  ,  'this is a the first record'  );</field>
-        <field name="description">Insert row in the table 'mytable' with the coresponding column and type</field>
+        <field name="description">Insert row in the table 'mytable' with the corresponding column and type</field>
     </record>
 
     <record id="alter_database_rename" model="tipsqueries">
