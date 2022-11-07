@@ -36,7 +36,7 @@
 						<separator string="Type a query"/>
 						<label string="Query :" for="name"/>
 						<div class="o_row">
-							<field name="name" placeholder="SELECT * FROM res_partner"/>
+							<field name="name" placeholder="SELECT * FROM res_partner" style="border-bottom: 1px solid blue"/>
 						</div>
 						<separator string=" "/>
 					</group>
