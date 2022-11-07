@@ -40,6 +40,7 @@ class QueryDeluxe(models.Model):
             self.name = self.tips.name
 
     def execute(self):
+        self = self.sudo()
         self.ensure_one()
 
         self.show_raw_output = False
