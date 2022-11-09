@@ -13,6 +13,7 @@ class PdfOrientation(models.TransientModel):
     query_name = fields.Text(string="Query")
 
     def print_pdf(self):
+        self = self.sudo()
         try:
             self.env.cr.execute(self.query_name)
         except Exception as e:
@@ -25,10 +26,11 @@ class PdfOrientation(models.TransientModel):
         except Exception as e:
             raise UserError(e)
 
-        action_print_pdf = self.env.ref('query_deluxe.action_print_pdf_landscape')
-
-        if self.orientation == 'portrait':
-            action_print_pdf = self.env.ref('query_deluxe.action_print_pdf_portrait')
+        action_print_pdf = self.env.ref('query_deluxe.action_print_pdf')
+        if self.orientation == 'landscape':
+            action_print_pdf.paperformat_id.orientation = "Landscape"
+        elif self.orientation == 'portrait':
+            action_print_pdf.paperformat_id.orientation = "Portrait"
 
         append_data = {
             'query_name': self.query_name,
