@@ -21,29 +21,24 @@
 				</header>
 
 				<sheet>
-					<group>
-						<separator string="Examples"/>
+					<group string="Examples">
 						<label string="Examples :" for="tips"/>
 						<div class="o_row">
 							<field name="tips" widget="selection"/>
 							<button name="copy_query" type="object" class="btn-danger" string="Copy" attrs="{'invisible':[('tips','=',False)]}"/>
 						</div>
 						<field name="tips_description" attrs="{'invisible':[('tips','=',False)]}"/>
-						<separator string=" "/>
 					</group>
 
-					<group>
-						<separator string="Type a query"/>
+					<group string="Type a query">
 						<label string="Query :" for="name"/>
 						<div class="o_row">
 							<field name="name" placeholder="SELECT * FROM res_partner" style="border-bottom: 1px solid blue"/>
 						</div>
-						<separator string=" "/>
 					</group>
 
 					<group>
 						<button name="execute" type="object" string="Execute" class="oe_highlight"/>
-						<separator string=" "/>
 					</group>
 
 					<group>
