@@ -17,37 +17,40 @@
 		<field name="arch" type="xml">
 			<form>
 				<header>
-					<button name="print_result" string="Print PDF" type="object" attrs="{'invisible':[('raw_output','in',['',[],False])]}" style="color: blue !important"/>
+					<button name="print_result" string="Print PDF" type="object" class="oe_highlight" attrs="{'invisible':[('raw_output','in',['',[],False])]}"/>
 				</header>
 
 				<sheet>
 					<group string="Examples">
-						<group colspan="4">
-							<field name="tips" widget="selection" nolabel="1"/>
-							<button name="copy_query" type="object" style="color:green" string="Copy" attrs="{'invisible':[('tips','=',False)]}"/>
-						</group>
-
-						<group colspan="4">
-							<field name="tips_description" attrs="{'invisible':[('tips','=',False)]}"/>
-						</group>
+						<label string="Examples :" for="tips"/>
+						<div class="o_row">
+							<field name="tips" widget="selection"/>
+							<button name="copy_query" type="object" class="btn-danger" string="Copy" attrs="{'invisible':[('tips','=',False)]}"/>
+						</div>
+						<field name="tips_description" attrs="{'invisible':[('tips','=',False)]}"/>
 					</group>
 
-					<group string="Type a query" colspan="4">
-						<field name="name" nolabel="1" placeholder="SELECT * FROM res_partner"/>
+					<group string="Type a query">
+						<label string="Query :" for="name"/>
+						<div class="o_row">
+							<field name="name" placeholder="SELECT * FROM res_partner" style="border-bottom: 1px solid blue"/>
+						</div>
 					</group>
-					<button name="execute" type="object" string="Execute" class="oe_highlight"/>
 
-					<div style="overflow:visible !important;">
-						<group>
-							<group colspan="4">
-								<field name="rowcount" readonly="1" nolabel="1"/>
-							</group>
+					<group>
+						<button name="execute" type="object" string="Execute" class="oe_highlight"/>
+					</group>
 
-							<group colspan="4">
-								<field name="html" readonly="1" nolabel="1"/>
-							</group>
-						</group>
-					</div>
+					<group>
+						<label string=" " for="rowcount"/>
+						<div class="o_row">
+							<field name="rowcount" readonly="1" nolabel="1"/>
+						</div>
+					</group>
+
+					<group>
+						<field name="html" readonly="1" nolabel="1"/>
+					</group>
 
 					<group>
 						<field name="show_raw_output"/>
@@ -60,12 +63,6 @@
 						<field name="message_ids" widget="mail_thread"/>
 					</div>
 				</sheet>
-
-<!--				<notebook>-->
-<!--					<page name="result" string="Result">-->
-
-<!--					</page>-->
-<!--				</notebook>-->
 			</form>
 		</field>
 	</record>
@@ -77,17 +74,11 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-	<!--
-	////
-	////
-	////
-	-->
-
 	<record id="tips_queries_view_tree" model="ir.ui.view">
 		<field name="name">Memorize a query tree</field>
 		<field name="model">tipsqueries</field>
 		<field name="arch" type="xml">
-			<tree editable="top">
+			<tree editable="bottom">
 				<field name="name" string="Query"/>
 				<field name="description" string="Description"/>
 			</tree>
@@ -114,6 +105,6 @@
 
 	<menuitem id="query_deluxe_menu" name="Query Deluxe" sequence="-1" groups="query_deluxe.group_query_deluxe" web_icon="query_deluxe,static/description/icon.png"/>
 
-	<menuitem id="query_deluxe_submenu_querydeluxe" parent="query_deluxe_menu" action="query_deluxe_submenu_querydeluxe_action" sequence="-1" groups="query_deluxe.group_query_deluxe"/>
-	<menuitem id="query_deluxe_submenu_tipsqueries" parent="query_deluxe_menu" action="query_deluxe_submenu_tipsqueries_action" sequence="10" groups="query_deluxe.group_query_deluxe"/>
+	<menuitem id="query_deluxe.query_deluxe_submenu_querydeluxe" parent="query_deluxe.query_deluxe_menu" action="query_deluxe.query_deluxe_submenu_querydeluxe_action" sequence="-1" groups="query_deluxe.group_query_deluxe"/>
+	<menuitem id="query_deluxe.query_deluxe_submenu_tipsqueries" parent="query_deluxe.query_deluxe_menu" action="query_deluxe.query_deluxe_submenu_tipsqueries_action" sequence="10" groups="query_deluxe.group_query_deluxe"/>
 </odoo>
