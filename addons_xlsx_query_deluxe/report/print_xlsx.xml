@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <record id="report_xlsx" model="ir.actions.report">
+        <field name="name">Query Deluxe report xlsx</field>
+        <field name="model">querydeluxe</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">query_deluxe.report_layout_xlsx</field>
+        <field name="report_file">query_deluxe.report_layout_xlsx</field>
+    </record>
+</odoo>
