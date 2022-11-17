@@ -7,7 +7,7 @@
         'version': '16.0.1.0.2',
         'license': 'AGPL-3',
         'support': 'yvandotet@yahoo.fr',
-        'website': 'https://github.com/YvanDotet/',
+        'website': 'https://github.com/YvanDotet/query_deluxe/',
         'installable': True,
 
         'data': [
