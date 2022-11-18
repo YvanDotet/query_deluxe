@@ -7,9 +7,6 @@ class PrintPdfParser(models.AbstractModel):
 
     @api.model
     def get_report_values(self, docids, data=None):
-        # append more informations to data
-        print(docids)
-        print(data)
 
         return {
             'query_name': data.get('query_name'),
