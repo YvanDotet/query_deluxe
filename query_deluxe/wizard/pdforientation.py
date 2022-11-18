@@ -32,8 +32,6 @@ class PdfOrientation(models.TransientModel):
         elif self.orientation == 'portrait':
             action_print_pdf.paperformat_id.orientation = "Portrait"
 
-        action_print_pdf.name = self.query_name
-
         append_data = {
             'query_name': self.query_name,
             'headers': headers,
