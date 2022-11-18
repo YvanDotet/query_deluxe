@@ -1,66 +1,64 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* query_deluxe
+#	* query_deluxe
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 12.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 21:51+0000\n"
-"PO-Revision-Date: 2020-11-09 22:52+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2022-11-18 10:02+0000\n"
+"PO-Revision-Date: 2022-11-18 10:02+0000\n"
+"Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: fr_BE\n"
-"X-Generator: Poedit 2.4.2\n"
 
 #. module: query_deluxe
 #: model:res.groups,name:query_deluxe.group_query_deluxe
 msgid "Access query_deluxe"
-msgstr ""
+msgstr "Accès query_deluxe"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Nécessite une action"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_ids
 msgid "Activities"
-msgstr ""
-
-#. module: query_deluxe
-#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_exception_decoration
-msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Activités"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Status de l'Activité"
 
 #. module: query_deluxe
-#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_type_icon
-msgid "Activity Type Icon"
-msgstr ""
+#: model:tipsqueries,description:query_deluxe.with_product_table
+msgid "Associate each product template with their product variant"
+msgstr "Associe chaque produit template avec leurs produits variants"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Nombre de pièces jointes"
 
 #. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.pdforientation_form
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
 msgid "Copy"
 msgstr "Copier"
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.create_table_mytable
+msgid "Create a table 'mytable' with a column for id,name and description"
+msgstr "Créée une table 'mytable' avec une colonne pour l'id, le nom et la description"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__create_uid
@@ -77,18 +75,38 @@ msgid "Created on"
 msgstr "Créé le"
 
 #. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.delete_sale_order
+msgid "Delete old sale_orders that was last modified before the 2018 year"
+msgstr "Supprime les anciens devis qui ont été modifiés pour la dernière fois avant l'année 2018"
+
+#. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__tips_description
 #: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__description
 #: model_terms:ir.ui.view,arch_db:query_deluxe.tips_queries_view_tree
 msgid "Description"
-msgstr "Description"
+msgstr ""
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__display_name
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__display_name
 #: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom affiché"
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.select_res_partner
+msgid "Display all the records of res.partner's model, with name, phone and email attributes."
+msgstr "Affiche tous les enregistrements du modèle de res.partner, avec leur noms, numéros de téléphone et emails."
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.select_pg_catalog_pg_table
+msgid "Display all the tables inside that database"
+msgstr "Affiche toutes les tables de cette base de données"
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.drop_table_mytable
+msgid "Drop the table 'mytable'"
+msgstr "Efface la table 'mytable'"
 
 #. module: query_deluxe
 #: model:ir.actions.act_window,name:query_deluxe.query_deluxe_submenu_tipsqueries_action
@@ -100,28 +118,33 @@ msgstr "Exemples"
 
 #. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
+msgid "Examples :"
+msgstr "Exemples :"
+
+#. module: query_deluxe
+#: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
 msgid "Execute"
 msgstr "Exécuter"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Abonnés"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Abonnés (Canaux)"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Abonnés (Partenaires)"
 
 #. module: query_deluxe
-#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__activity_type_icon
-msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+#: model:tipsqueries,description:query_deluxe.alter_database_rename
+msgid "Give a new name to a database"
+msgstr "Donne un nouveau nom à une base de données"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__html
@@ -136,33 +159,32 @@ msgid "ID"
 msgstr ""
 
 #. module: query_deluxe
-#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_exception_icon
-msgid "Icon"
-msgstr ""
-
-#. module: query_deluxe
-#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__activity_exception_icon
-msgid "Icon to indicate an exception activity."
-msgstr ""
+#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si coché, de nouveaux messages demandent votre attention."
 
 #. module: query_deluxe
 #: model:ir.model.fields,help:query_deluxe.field_querydeluxe__message_needaction
-#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__message_unread
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si coché, de nouveaux messages demandent votre attention."
 
 #. module: query_deluxe
 #: model:ir.model.fields,help:query_deluxe.field_querydeluxe__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Si actif, certains messages ont une erreur de livraison."
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.insert_into_mytable
+msgid "Insert row in the table 'mytable' with the corresponding column and type"
+msgstr "Insére une ligne dans la table 'mytable' avec la colonne et le type correspondants"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Est un abonné"
 
 #. module: query_deluxe
-#: code:addons/query_deluxe/wizard/pdforientation.py:0
+#: code:addons/query_deluxe/wizard/pdforientation.py:10
 #, python-format
 msgid "Landscape"
 msgstr "Paysage"
@@ -172,31 +194,41 @@ msgstr "Paysage"
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe____last_update
 #: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Dernière modification le"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__write_uid
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__write_uid
 #: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière mise à jour par"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__write_date
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__write_date
 #: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière mise à jour le"
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.select_datname_pg_database
+msgid "List of all the databases inside that postgreSQL"
+msgstr "Liste de toutes les bases de données à l'intérieur de ce postgreSQL"
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.select_pg_user
+msgid "List of all the users using that postgreSQL"
+msgstr "Liste de tous les utilisateurs utilisant ce postgreSQL"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Pièce jointe principale"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Erreur d'envoi du message"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_ids
@@ -204,43 +236,58 @@ msgid "Messages"
 msgstr ""
 
 #. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.update_res_partner_email
+msgid "Modify all the email of the contact within the rule 'name of the contact'+'@company_mail.com'"
+msgstr "Modifie tous les emails de contact avec la règle suivante : 'nom du contact'+'@company_mail.com'"
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.update_res_users_password
+msgid "Modify the password to 'my_45_password' for the user with id = 10"
+msgstr "Modifie le mot de passe en 'my_45_password' pour l'utilisateur d'id = 10"
+
+#. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Date limite de l'Activité à Venir"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Résumé d'activité suivant"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Type d'Activités à Venir"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Nombre d'actions"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_has_error_counter
-msgid "Number of errors"
-msgstr ""
+msgid "Number of error"
+msgstr "Nombre d'erreurs"
 
 #. module: query_deluxe
 #: model:ir.model.fields,help:query_deluxe.field_querydeluxe__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "Nombre de messages exigeant une action"
 
 #. module: query_deluxe
 #: model:ir.model.fields,help:query_deluxe.field_querydeluxe__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Nombre de messages avec des erreurs d'envoi"
 
 #. module: query_deluxe
 #: model:ir.model.fields,help:query_deluxe.field_querydeluxe__message_unread_counter
 msgid "Number of unread messages"
+msgstr "Nombre de messages non lus"
+
+#. module: query_deluxe
+#: selection:querydeluxe,activity_state:0
+msgid "Overdue"
 msgstr ""
 
 #. module: query_deluxe
@@ -249,25 +296,30 @@ msgid "PDF orientation"
 msgstr "Orientation du PDF"
 
 #. module: query_deluxe
-#: code:addons/query_deluxe/wizard/pdforientation.py:0
+#: selection:querydeluxe,activity_state:0
+msgid "Planned"
+msgstr ""
+
+#. module: query_deluxe
+#: code:addons/query_deluxe/wizard/pdforientation.py:10
 #, python-format
 msgid "Portrait"
-msgstr "Portrait"
+msgstr ""
 
 #. module: query_deluxe
 #: model:ir.model,name:query_deluxe.model_querydeluxe
 msgid "Postgres queries from Odoo interface"
-msgstr "Requête PostgreSQL depuis l'interface Odoo"
+msgstr "Requête postgreSQL depuis l'interface Odoo"
 
 #. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.pdforientation_form
 msgid "Print"
-msgstr ""
+msgstr "Imprimer"
 
 #. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
 msgid "Print PDF"
-msgstr ""
+msgstr "Imprimer PDF"
 
 #. module: query_deluxe
 #: model:ir.actions.act_window,name:query_deluxe.query_deluxe_submenu_querydeluxe_action
@@ -284,6 +336,11 @@ msgid "Query"
 msgstr "Requête"
 
 #. module: query_deluxe
+#: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
+msgid "Query :"
+msgstr "Requête :"
+
+#. module: query_deluxe
 #: model:ir.ui.menu,name:query_deluxe.query_deluxe_menu
 msgid "Query Deluxe"
 msgstr ""
@@ -291,7 +348,7 @@ msgstr ""
 #. module: query_deluxe
 #: model:ir.actions.report,name:query_deluxe.action_print_pdf
 msgid "Query result"
-msgstr "SELECT * FROM pg_catalog.pg_tables;"
+msgstr "Résultat de la requête"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__raw_output
@@ -301,7 +358,7 @@ msgstr "Données brutes"
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Responsable"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__rowcount
@@ -316,18 +373,28 @@ msgstr ""
 #. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.tips_queries_view_search
 msgid "Search"
-msgstr ""
+msgstr "Rechercher"
 
 #. module: query_deluxe
-#: code:addons/query_deluxe/models/query_deluxe.py:0
+#: code:addons/query_deluxe/models/query_deluxe.py:26
 #, python-format
 msgid "Select orientation of the PDF's result"
 msgstr "Sélectionner l'orientation du PDF"
 
 #. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.select_res_partner_inner_join_sale_order
+msgid "Select the clients linked with their sales orders"
+msgstr "Sélectionne les clients liés à leurs devis"
+
+#. module: query_deluxe
 #: model:ir.model,name:query_deluxe.model_pdforientation
 msgid "Select the orientation of the pdf"
 msgstr "Sélectionner l'orientation du PDF"
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.select_sale_order
+msgid "Show only the 5 first records of sale.order's model where their client have 'Johnson' in their name"
+msgstr "Affiche uniquement les 5 premiers enregistrements du modèle de sale.order où leur client possède 'Johnson' dans leur nom"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__show_raw_output
@@ -336,16 +403,28 @@ msgstr "Montrer les données brutes de la requête"
 
 #. module: query_deluxe
 #: model:ir.model.fields,help:query_deluxe.field_querydeluxe__activity_state
-msgid ""
-"Status based on activities\n"
+msgid "Status based on activities\n"
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
-msgstr ""
+msgstr "Statut basé sur les activités\n"
+"En retard : la date d'échéance est déjà dépassée\n"
+"Aujourd'hui : la date d'activité est aujourd'hui\n"
+"Planifiée : activités futures"
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.select_versions
+msgid "The version of that postgreSQL"
+msgstr "La version de ce postgreSQL"
 
 #. module: query_deluxe
 #: model:ir.model,name:query_deluxe.model_tipsqueries
 msgid "Tips for queries"
+msgstr "Conseils pour les requêtes"
+
+#. module: query_deluxe
+#: selection:querydeluxe,activity_state:0
+msgid "Today"
 msgstr ""
 
 #. module: query_deluxe
@@ -359,21 +438,32 @@ msgid "Type a query : "
 msgstr "Ecrivez une requête :"
 
 #. module: query_deluxe
-#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__activity_exception_decoration
-msgid "Type of the exception activity on record."
-msgstr ""
-
-#. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "Messages non lus"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Compteur de messages non lus"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__valid_query_name
 msgid "Valid Query Name"
 msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__website_message_ids
+msgid "Website Messages"
+msgstr "Messages du site web"
+
+#. module: query_deluxe
+#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__website_message_ids
+msgid "Website communication history"
+msgstr "Historique de communication du site web"
+
+#. module: query_deluxe
+#: code:addons/query_deluxe/models/query_deluxe.py:74
+#, python-format
+msgid "{0} row{1} processed"
+msgstr "{0} ligne{1} traitée{1}"
