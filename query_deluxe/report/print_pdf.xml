@@ -32,7 +32,7 @@
                                     </td>
 
                                     <t t-foreach="body" t-as="value">
-                                        <td t-att-style="'background-color: {0}; border: 1px solid'.format('cyan' if body_index%2==1 else 'white')">
+                                        <td style="border: 1px solid black">
                                             <t t-esc="str(value) if (value is not None) else ''"/>
                                         </td>
                                     </t>
