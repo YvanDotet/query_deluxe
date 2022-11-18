@@ -4,10 +4,10 @@
         'author': 'Yvan Dotet',
         'depends': ['base', 'mail'],
         'application': True,
-        'version': '12.0.1.0.0',
+        'version': '12.0.1.0.1',
         'license': 'AGPL-3',
         'support': 'yvandotet@yahoo.fr',
-        'website': 'https://github.com/YvanDotet/',
+        'website': 'https://github.com/YvanDotet/query_deluxe/',
         'installable': True,
 
         'data': [
