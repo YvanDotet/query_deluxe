@@ -4,23 +4,21 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 13.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-09 21:51+0000\n"
-"PO-Revision-Date: 2020-11-09 22:52+0100\n"
+"POT-Creation-Date: 2022-11-18 08:50+0000\n"
+"PO-Revision-Date: 2022-11-18 08:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: fr_BE\n"
-"X-Generator: Poedit 2.4.2\n"
 
 #. module: query_deluxe
 #: model:res.groups,name:query_deluxe.group_query_deluxe
 msgid "Access query_deluxe"
-msgstr ""
+msgstr "Accès query_deluxe"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_needaction
@@ -43,9 +41,9 @@ msgid "Activity State"
 msgstr ""
 
 #. module: query_deluxe
-#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_type_icon
-msgid "Activity Type Icon"
-msgstr ""
+#: model:tipsqueries,description:query_deluxe.with_product_table
+msgid "Associate each product template with their product variant"
+msgstr "Associe chaque produit template avec leurs produits variants"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_attachment_count
@@ -55,12 +53,19 @@ msgstr ""
 #. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.pdforientation_form
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
 msgid "Copy"
 msgstr "Copier"
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.create_table_mytable
+msgid "Create a table 'mytable' with a column for id,name and description"
+msgstr ""
+"Créée une table 'mytable' avec une colonne pour l'id, le nom et la "
+"description"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__create_uid
@@ -77,11 +82,18 @@ msgid "Created on"
 msgstr "Créé le"
 
 #. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.delete_sale_order
+msgid "Delete old sale_orders that was last modified before the 2018 year"
+msgstr ""
+"Supprime les anciens devis qui ont été modifiés pour la dernière fois avant "
+"l'année 2018"
+
+#. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__tips_description
 #: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__description
 #: model_terms:ir.ui.view,arch_db:query_deluxe.tips_queries_view_tree
 msgid "Description"
-msgstr "Description"
+msgstr ""
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__display_name
@@ -91,12 +103,36 @@ msgid "Display Name"
 msgstr ""
 
 #. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.select_res_partner
+msgid ""
+"Display all the records of res.partner's model, with name, phone and email "
+"attributes."
+msgstr ""
+"Affiche tous les enregistrements du modèle de res.partner, avec leur noms, "
+"numéros de téléphone et emails."
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.select_pg_catalog_pg_table
+msgid "Display all the tables inside that database"
+msgstr "Affiche toutes les tables de cette base de données"
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.drop_table_mytable
+msgid "Drop the table 'mytable'"
+msgstr "Efface la table 'mytable'"
+
+#. module: query_deluxe
 #: model:ir.actions.act_window,name:query_deluxe.query_deluxe_submenu_tipsqueries_action
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__tips
 #: model:ir.ui.menu,name:query_deluxe.query_deluxe_submenu_tipsqueries
 #: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
 msgid "Examples"
 msgstr "Exemples"
+
+#. module: query_deluxe
+#: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
+msgid "Examples :"
+msgstr "Exemples :"
 
 #. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
@@ -119,9 +155,9 @@ msgid "Followers (Partners)"
 msgstr ""
 
 #. module: query_deluxe
-#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__activity_type_icon
-msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+#: model:tipsqueries,description:query_deluxe.alter_database_rename
+msgid "Give a new name to a database"
+msgstr "Donne un nouveau nom à une base de données"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__html
@@ -153,8 +189,17 @@ msgstr ""
 
 #. module: query_deluxe
 #: model:ir.model.fields,help:query_deluxe.field_querydeluxe__message_has_error
+#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.insert_into_mytable
+msgid ""
+"Insert row in the table 'mytable' with the corresponding column and type"
+msgstr ""
+"Insére une ligne dans la table 'mytable' avec la colonne et le type "
+"correspondants"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_is_follower
@@ -172,21 +217,31 @@ msgstr "Paysage"
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe____last_update
 #: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Dernière modification le"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__write_uid
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__write_uid
 #: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière mise à jour par"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__write_date
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__write_date
 #: model:ir.model.fields,field_description:query_deluxe.field_tipsqueries__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière mise à jour le"
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.select_datname_pg_database
+msgid "List of all the databases inside that postgreSQL"
+msgstr "Liste de toutes les bases de données à l'intérieur de ce postgreSQL"
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.select_pg_user
+msgid "List of all the users using that postgreSQL"
+msgstr "Liste de tous les utilisateurs utilisant ce postgreSQL"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_main_attachment_id
@@ -202,6 +257,21 @@ msgstr ""
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_ids
 msgid "Messages"
 msgstr ""
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.update_res_partner_email
+msgid ""
+"Modify all the email of the contact within the rule 'name of the "
+"contact'+'@company_mail.com'"
+msgstr ""
+"Modifie tous les emails de contact avec la règle suivante : 'nom du "
+"contact'+'@company_mail.com'"
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.update_res_users_password
+msgid "Modify the password to 'my_45_password' for the user with id = 10"
+msgstr ""
+"Modifie le mot de passe en 'my_45_password' pour l'utilisateur d'id = 10"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_date_deadline
@@ -252,22 +322,22 @@ msgstr "Orientation du PDF"
 #: code:addons/query_deluxe/wizard/pdforientation.py:0
 #, python-format
 msgid "Portrait"
-msgstr "Portrait"
+msgstr ""
 
 #. module: query_deluxe
 #: model:ir.model,name:query_deluxe.model_querydeluxe
 msgid "Postgres queries from Odoo interface"
-msgstr "Requête PostgreSQL depuis l'interface Odoo"
+msgstr "Requête postgreSQL depuis l'interface Odoo"
 
 #. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.pdforientation_form
 msgid "Print"
-msgstr ""
+msgstr "Imprimer"
 
 #. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
 msgid "Print PDF"
-msgstr ""
+msgstr "Imprimer PDF"
 
 #. module: query_deluxe
 #: model:ir.actions.act_window,name:query_deluxe.query_deluxe_submenu_querydeluxe_action
@@ -284,6 +354,11 @@ msgid "Query"
 msgstr "Requête"
 
 #. module: query_deluxe
+#: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
+msgid "Query :"
+msgstr "Requête :"
+
+#. module: query_deluxe
 #: model:ir.ui.menu,name:query_deluxe.query_deluxe_menu
 msgid "Query Deluxe"
 msgstr ""
@@ -291,7 +366,7 @@ msgstr ""
 #. module: query_deluxe
 #: model:ir.actions.report,name:query_deluxe.action_print_pdf
 msgid "Query result"
-msgstr "SELECT * FROM pg_catalog.pg_tables;"
+msgstr "Résultat de la requête"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__raw_output
@@ -314,6 +389,11 @@ msgid "SELECT * FROM res_partner"
 msgstr ""
 
 #. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.tips_queries_view_search
 msgid "Search"
 msgstr ""
@@ -325,9 +405,23 @@ msgid "Select orientation of the PDF's result"
 msgstr "Sélectionner l'orientation du PDF"
 
 #. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.select_res_partner_inner_join_sale_order
+msgid "Select the clients linked with their sales orders"
+msgstr "Sélectionne les clients liés à leurs devis"
+
+#. module: query_deluxe
 #: model:ir.model,name:query_deluxe.model_pdforientation
 msgid "Select the orientation of the pdf"
 msgstr "Sélectionner l'orientation du PDF"
+
+#. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.select_sale_order
+msgid ""
+"Show only the 5 first records of sale.order's model where their client have "
+"'Johnson' in their name"
+msgstr ""
+"Affiche uniquement les 5 premiers enregistrements du modèle de sale.order où"
+" leur client possède 'Johnson' dans leur nom"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__show_raw_output
@@ -344,9 +438,14 @@ msgid ""
 msgstr ""
 
 #. module: query_deluxe
+#: model:tipsqueries,description:query_deluxe.select_versions
+msgid "The version of that postgreSQL"
+msgstr "La version de ce postgreSQL"
+
+#. module: query_deluxe
 #: model:ir.model,name:query_deluxe.model_tipsqueries
 msgid "Tips for queries"
-msgstr ""
+msgstr "Conseils pour les requêtes"
 
 #. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.query_deluxe_view_form
@@ -377,3 +476,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__valid_query_name
 msgid "Valid Query Name"
 msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,help:query_deluxe.field_querydeluxe__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: query_deluxe
+#: code:addons/query_deluxe/models/query_deluxe.py:0
+#, python-format
+msgid "{0} row{1} processed"
+msgstr "{0} ligne{1} traitée{1}"
