@@ -38,6 +38,10 @@ class QueryDeluxe(models.Model):
 
         if self.tips:
             self.name = self.tips.name
+    
+    @api.model
+    def create(self, vals):
+        return super(QueryDeluxe, self.sudo()).create(vals)
 
     def execute(self):
         self = self.sudo()
