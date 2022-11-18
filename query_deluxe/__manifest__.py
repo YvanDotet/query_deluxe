@@ -4,7 +4,7 @@
         'author': 'Yvan Dotet',
         'depends': ['base', 'mail'],
         'application': True,
-        'version': '15.0.1.0.3',
+        'version': '15.0.1.0.4',
         'license': 'AGPL-3',
         'support': 'yvandotet@yahoo.fr',
         'website': 'https://github.com/YvanDotet/query_deluxe/',
