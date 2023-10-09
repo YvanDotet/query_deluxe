@@ -2,7 +2,7 @@ from odoo import models, exceptions, _
 from odoo.exceptions import UserError
 
 
-class AnalysisReportXLSX(models.AbstractModel):
+class ReportXLSX(models.AbstractModel):
     _name = 'report.query_deluxe.report_layout_xlsx'
     _inherit = 'report.report_xlsx.abstract'
     _description = 'Query Deluxe xlsx parser'
