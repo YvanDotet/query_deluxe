@@ -1,21 +1,16 @@
 ==============
-query_deluxe
+query_deluxe_xlsx
 ==============
 
-This module is usefull to make postgreSQL's queries directly from an Odoo interface.
-
-You can type queries involving SELECT statement and many clauses like WHERE, AND, etc ...
-
-The result is correctly presented in a table form.
-
-You can also make UPDATE, DELETE, CREATE, INSERT, ALTER and DROP statements.
+This module is usefull to print postgreSQL's queries on excel format.
+Before installing this module, you need to have installed the modules "query_deluxe" and "report_xlsx"
 
 Usage
 =====
 
-Go to "Apps" menu and type "query_deluxe" into the search box.
+Go to "Apps" menu and type "query_deluxe_xlsx" into the search box.
 
-Odoo version 16
+Odoo version 17
 
 Credits
 =======

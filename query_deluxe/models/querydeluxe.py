@@ -35,6 +35,7 @@ class QueryDeluxe(models.Model):
 
     def print_result_excel(self):
         self.ensure_one()
+
         if not self.env['ir.module.module'].search([('name', '=', 'query_deluxe_xlsx'), ('state', '=', 'installed')]):
             raise exceptions.ValidationError(_("Please install the module 'query_deluxe_xlsx', that depends to the module 'report_xlsx'."))
 

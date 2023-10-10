@@ -1,6 +1,6 @@
 {
         'name': 'PostgreSQL Query Deluxe Excel',
-        'description': 'Execute postgreSQL query into Odoo interface',
+        'description': 'Print postgreSQL query on excel file',
         'author': 'Yvan Dotet',
         'depends': ['query_deluxe', 'report_xlsx'],
         'auto_install': True,
@@ -12,8 +12,6 @@
         'installable': True,
 
         'data': [
-            'views/querydeluxe.xml',
-
             'report/print_xlsx.xml',
             ],
 }

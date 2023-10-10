@@ -1,5 +1,4 @@
 from odoo import models, exceptions, _
-from odoo.exceptions import UserError
 
 
 class QueryDeluxeReportXLSX(models.AbstractModel):
@@ -18,14 +17,14 @@ class QueryDeluxeReportXLSX(models.AbstractModel):
             try:
                 self.env.cr.execute(query.valid_query_name)
             except Exception as e:
-                raise UserError(e)
+                raise exceptions.UserError(e)
 
             try:
                 if self.env.cr.description:
                     headers = [d[0] for d in self.env.cr.description]
                     bodies = self.env.cr.fetchall()
             except Exception as e:
-                raise UserError(e)
+                raise exceptions.UserError(e)
 
             sheet = workbook.add_worksheet(str(query.valid_query_name))
             col = 0
