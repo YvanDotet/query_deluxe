@@ -147,7 +147,7 @@ msgstr ""
 
 #. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.querydeluxe_search
-msgid "Group By"
+msgid "Group by"
 msgstr "Grouper par"
 
 #. module: query_deluxe

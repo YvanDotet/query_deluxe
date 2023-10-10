@@ -76,7 +76,7 @@
                     <filter name="active" string="Only active" domain="[('active', '=', True)]"/>
                     <filter name="archive" string="Only archived" domain="[('active', '=', False)]"/>
                 </group>
-                <group name="group_by" string="Group By">
+                <group name="group_by" string="Group by">
                     <filter name="name" string="Query" context="{'group_by': 'name'}"/>
                     <filter name="note" string="Note" context="{'group_by': 'note'}"/>
 				</group>
