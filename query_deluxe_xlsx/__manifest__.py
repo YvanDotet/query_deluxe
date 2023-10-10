@@ -1,9 +1,10 @@
 {
-        'name': 'PostgreSQL Query Deluxe',
+        'name': 'PostgreSQL Query Deluxe Excel',
         'description': 'Execute postgreSQL query into Odoo interface',
         'author': 'Yvan Dotet',
-        'depends': ['base', 'mail'],
-        'application': True,
+        'depends': ['query_deluxe', 'report_xlsx'],
+        'auto_install': True,
+        'application': False,
         'version': '17.0',
         'license': 'AGPL-3',
         'support': 'yvandotet@yahoo.fr',
@@ -11,18 +12,9 @@
         'installable': True,
 
         'data': [
-            'security/security.xml',
-            'security/ir.model.access.csv',
-
             'views/querydeluxe.xml',
 
-            'wizard/pdforientation.xml',
-
-            'report/print_pdf.xml',
-
-            'datas/data.xml'
+            'report/print_xlsx.xml',
             ],
-
-        'images': ['static/description/banner.gif']
 }
 
