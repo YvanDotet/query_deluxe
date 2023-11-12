@@ -40,7 +40,7 @@ class QueryDeluxe(models.Model):
             raise exceptions.ValidationError(_("""
             Please install the module 'query_deluxe_xlsx', that depends on the module 'report_xlsx'.\n 
             The module 'query_deluxe_xlsx' is available at \n https://apps.odoo.com/apps/modules/17.0/query_deluxe_xlsx \n 
-            The module 'report_xlsx' is available at \n https://apps.odoo.com/apps/modules/17.0/report_xlsx \n
+            The module 'report_xlsx' should be available at \n https://apps.odoo.com/apps/modules/17.0/report_xlsx \n
             """))
 
     def get_result_from_query(self, query):
