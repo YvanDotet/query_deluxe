@@ -2,7 +2,7 @@
         'name': 'PostgreSQL Query Deluxe Excel',
         'description': 'Print postgreSQL query on excel file',
         'author': 'Yvan Dotet',
-        'depends': ['query_deluxe'],
+        'depends': ['query_deluxe', 'report_xlsx'],
         'auto_install': True,
         'application': False,
         'version': '17.0',

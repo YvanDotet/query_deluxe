@@ -38,8 +38,9 @@ class QueryDeluxe(models.Model):
 
         if not self.env['ir.module.module'].search([('name', '=', 'query_deluxe_xlsx'), ('state', '=', 'installed')]):
             raise exceptions.ValidationError(_("""
-            Please install the module 'query_deluxe_xlsx', that depends to the module 'report_xlsx'.\n
-            The module 'query_deluxe_xlsx' is available at 
+            Please install the module 'query_deluxe_xlsx', that depends on the module 'report_xlsx'.\n 
+            The module 'query_deluxe_xlsx' is available at .\n 
+            The module 'report_xlsx' is available at 'https://apps.odoo.com/apps/modules/17.0/report_xlsx'.
             """))
 
     def execute(self):
