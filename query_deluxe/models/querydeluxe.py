@@ -3,7 +3,7 @@ from odoo import api, fields, models, exceptions, _
 
 class QueryDeluxe(models.Model):
     _name = "querydeluxe"
-    _description = "Postgres queries from Odoo interface"
+    _description = "PostgreSQL queries from Odoo interface"
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _order = "id desc"
 
@@ -37,7 +37,10 @@ class QueryDeluxe(models.Model):
         self.ensure_one()
 
         if not self.env['ir.module.module'].search([('name', '=', 'query_deluxe_xlsx'), ('state', '=', 'installed')]):
-            raise exceptions.ValidationError(_("Please install the module 'query_deluxe_xlsx', that depends to the module 'report_xlsx'."))
+            raise exceptions.ValidationError(_("""
+            Please install the module 'query_deluxe_xlsx', that depends to the module 'report_xlsx'.\n
+            The module 'query_deluxe_xlsx' is available at 
+            """))
 
     def execute(self):
         for record in self.sudo():
