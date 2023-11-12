@@ -80,6 +80,6 @@
 
     <record id="select_res_partner" model="querydeluxe">
         <field name="name">SELECT name,phone,email FROM res_partner;</field>
-        <field name="note">Display all the records of res.partner's model, with name, phone and email attributes.</field>
+        <field name="note">Display all the records of res.partner's model, with name, phone and email attributes</field>
     </record>
 </odoo>
