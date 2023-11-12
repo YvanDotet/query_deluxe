@@ -13,11 +13,7 @@ class QueryDeluxe(models.Model):
     html = fields.Html(string='HTML')
 
     name = fields.Text(string='Type a query : ', help="Type the query you want to execute.")
-    valid_query_name = fields.Text()
-
     note = fields.Char(string="Note", help="Optional helpful note about the current query, what it does, the dangers, etc...", translate=True)
-
-    raw_output = fields.Text(string='Raw output')
 
     def print_result_pdf(self):
         self.ensure_one()
@@ -29,7 +25,8 @@ class QueryDeluxe(models.Model):
             'type': 'ir.actions.act_window',
             'target': 'new',
             'context': {
-                'default_query_name': self.valid_query_name
+                'default_name': self.name,
+                'default_query_id': self.id
             },
         }
 
@@ -44,31 +41,29 @@ class QueryDeluxe(models.Model):
             """))
 
     def get_result_from_query(self, query):
+        self = self.sudo()
         headers = []
         datas = []
 
-        try:
-            self.env.cr.execute(query)
-        except Exception as e:
-            raise exceptions.UserError(e)
+        if query:
+            try:
+                self.env.cr.execute(query)
+            except Exception as e:
+                raise exceptions.UserError(e)
 
-        try:
-            if self.env.cr.description:
-                headers = [d[0] for d in self.env.cr.description]
-                datas = self.env.cr.fetchall()
-        except Exception as e:
-            raise exceptions.UserError(e)
+            try:
+                if self.env.cr.description:
+                    headers = [d[0] for d in self.env.cr.description]
+                    datas = self.env.cr.fetchall()
+            except Exception as e:
+                raise exceptions.UserError(e)
 
         return headers, datas
 
     def execute(self):
         for record in self.sudo():
-            record.raw_output = ''
-
             record.rowcount = ''
             record.html = '<br></br>'
-
-            record.valid_query_name = ''
 
             if record.name:
                 record.message_post(body=str(record.name))
@@ -79,9 +74,6 @@ class QueryDeluxe(models.Model):
                 record.rowcount = _("{0} row{1} processed").format(rowcount, 's' if 1 < rowcount else '')
 
                 if headers and datas:
-                    record.valid_query_name = record.name
-                    record.raw_output = datas
-
                     header_html = "<tr style='background-color: lightgrey'> <th style='background-color:white'/>"
                     header_html += "".join(["<th style='border: 1px solid black'>"+str(header)+"</th>" for header in headers])
                     header_html += "</tr>"

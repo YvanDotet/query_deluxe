@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-12 21:03+0000\n"
-"PO-Revision-Date: 2023-11-12 21:03+0000\n"
+"POT-Creation-Date: 2023-11-12 23:02+0000\n"
+"PO-Revision-Date: 2023-11-12 23:02+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -100,7 +100,9 @@ msgstr "Créer une nouvelle requête"
 #. module: query_deluxe
 #: model:querydeluxe,note:query_deluxe.create_table_mytable
 msgid "Create a table 'mytable' with a column for id,name and description"
-msgstr "Créée une table 'mytable' avec une colonne pour l'id, le nom et la description"
+msgstr ""
+"Créée une table 'mytable' avec une colonne pour l'id, le nom et la "
+"description"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__create_uid
@@ -117,7 +119,9 @@ msgstr "Créé le"
 #. module: query_deluxe
 #: model:querydeluxe,note:query_deluxe.delete_sale_order
 msgid "Delete old sale_orders that was last modified before the 2018 year"
-msgstr "Supprime les anciens devis qui ont été modifiés pour la dernière fois avant l'année 2018"
+msgstr ""
+"Supprime les anciens devis qui ont été modifiés pour la dernière fois avant "
+"l'année 2018"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__display_name
@@ -129,8 +133,10 @@ msgstr "Nom affiché"
 #: model:querydeluxe,note:query_deluxe.select_res_partner
 msgid ""
 "Display all the records of res.partner's model, with name, phone and email "
-"attributes"
-msgstr "Affiche tous les enregistrements du modèle de res.partner, avec leur noms, numéros de téléphone et emails"
+"attributes."
+msgstr ""
+"Affiche tous les enregistrements du modèle de res.partner, avec leur noms, "
+"numéros de téléphone et emails"
 
 #. module: query_deluxe
 #: model:querydeluxe,note:query_deluxe.select_pg_catalog_pg_table
@@ -217,7 +223,9 @@ msgstr ""
 #: model:querydeluxe,note:query_deluxe.insert_into_mytable
 msgid ""
 "Insert row in the table 'mytable' with the corresponding column and type"
-msgstr "Insére une ligne dans la table 'mytable' avec la colonne et le type correspondants"
+msgstr ""
+"Insére une ligne dans la table 'mytable' avec la colonne et le type "
+"correspondants"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_is_follower
@@ -268,12 +276,15 @@ msgstr ""
 msgid ""
 "Modify all the email of the contact within the rule 'name of the "
 "contact'+'@company_mail.com'"
-msgstr "Modifie tous les emails de contact avec la règle suivante : 'nom du contact'+'@company_mail.com'"
+msgstr ""
+"Modifie tous les emails de contact avec la règle suivante : 'nom du "
+"contact'+'@company_mail.com'"
 
 #. module: query_deluxe
 #: model:querydeluxe,note:query_deluxe.update_res_users_password
 msgid "Modify the password to 'my_45_password' for the user with id = 10"
-msgstr "Modifie le mot de passe en 'my_45_password' pour l'utilisateur d'id = 10"
+msgstr ""
+"Modifie le mot de passe en 'my_45_password' pour l'utilisateur d'id = 10"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__my_activity_date_deadline
@@ -374,12 +385,18 @@ msgid "Print XLSX"
 msgstr "Imprimer XLSX"
 
 #. module: query_deluxe
+#: model:ir.model,name:query_deluxe.model_report_query_deluxe_pdf_layout
+msgid "Print pdf parser"
+msgstr ""
+
+#. module: query_deluxe
 #: model:ir.ui.menu,name:query_deluxe.querydeluxe_menu
 msgid "Queries"
 msgstr "Requêtes"
 
 #. module: query_deluxe
-#: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__query_name
+#: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__name
+#: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__query_id
 #: model_terms:ir.ui.view,arch_db:query_deluxe.querydeluxe_search
 #: model_terms:ir.ui.view,arch_db:query_deluxe.querydeluxe_tree
 msgid "Query"
@@ -399,11 +416,6 @@ msgstr ""
 #: model:ir.actions.report,name:query_deluxe.action_print_pdf
 msgid "Query result"
 msgstr ""
-
-#. module: query_deluxe
-#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__raw_output
-msgid "Raw output"
-msgstr "Données brutes"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__activity_user_id
@@ -442,7 +454,9 @@ msgstr "Sélectionner l'orientation du PDF"
 msgid ""
 "Show only the 5 first records of sale.order's model where their client have "
 "'Johnson' in their name"
-msgstr "Affiche uniquement les 5 premiers enregistrements du modèle de sale.order où leur client possède 'Johnson' dans leur nom"
+msgstr ""
+"Affiche uniquement les 5 premiers enregistrements du modèle de sale.order où"
+" leur client possède 'Johnson' dans leur nom"
 
 #. module: query_deluxe
 #: model:ir.model.fields,help:query_deluxe.field_querydeluxe__activity_state
@@ -482,11 +496,6 @@ msgstr ""
 #: model:ir.model.fields,help:query_deluxe.field_querydeluxe__name
 msgid "Type the query you want to execute."
 msgstr "Tapez la requête que vous souhaitez exécuter."
-
-#. module: query_deluxe
-#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__valid_query_name
-msgid "Valid Query Name"
-msgstr ""
 
 #. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.querydeluxe_search

@@ -1,49 +1,55 @@
 <?xml version="1.0"?>
 
 <odoo>
-    <template id="pdf">
+    <template id="pdf_layout">
         <t t-call="web.html_container">
-<!--            <div class="header"/>-->
+            <t t-foreach="doc_ids" t-as="doc">
+                <div class="header"/>
 
-            <div class="article">
-                <div style="text-align:center">
-                    <t t-esc="query_name"/>
-                </div>
+                <div class="article">
+                    <div style="text-align:center">
+                        <span t-field="doc.name"/>
+                    </div>
 
-                <div>
-                    <table style="text-align: center">
-                        <thead style="background-color: lightgrey">
-                            <tr>
-                                <th style='background-color:white'/>
+                    <t t-set="results" t-value="get_datas(doc)"/>
+                    <t t-set="headers" t-value="results[0]"/>
+                    <t t-set="bodies" t-value="results[1]"/>
 
-                                <t t-foreach="headers" t-as="header">
-                                    <th style='border: 1px solid black'>
-                                        <t t-esc="str(header)"/>
-                                    </th>
-                                </t>
-                            </tr>
-                        </thead>
+                    <div t-if="headers and bodies">
+                        <table style="text-align: center">
+                            <thead style="background-color: lightgrey">
+                                <tr>
+                                    <th style='background-color:white'/>
 
-                        <tbody>
-                            <t t-foreach="bodies" t-as="body">
-                                <tr t-att-style="'background-color: {0}'.format('cyan' if body_index%2==1 else 'white')">
-                                    <td style='border-right: 3px double; border-bottom: 1px solid black; background-color: yellow'>
-                                        <t t-esc="1+body_index"/>
-                                    </td>
-
-                                    <t t-foreach="body" t-as="value">
-                                        <td style="border: 1px solid black">
-                                            <t t-esc="str(value) if (value is not None) else ''"/>
-                                        </td>
+                                    <t t-foreach="headers" t-as="header">
+                                        <th style='border: 1px solid black'>
+                                            <t t-esc="str(header)"/>
+                                        </th>
                                     </t>
                                 </tr>
-                            </t>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                            </thead>
 
-<!--            <div class="footer"/>-->
+                            <tbody>
+                                <t t-foreach="bodies" t-as="body">
+                                    <tr t-att-style="'background-color: {0}'.format('cyan' if body_index%2==1 else 'white')">
+                                        <td style='border-right: 3px double; border-bottom: 1px solid black; background-color: yellow'>
+                                            <t t-esc="1+body_index"/>
+                                        </td>
+
+                                        <t t-foreach="body" t-as="value">
+                                            <td style="border: 1px solid black">
+                                                <t t-esc="str(value) if (value is not None) else ''"/>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="footer"/>
+            </t>
         </t>
     </template>
 
@@ -65,8 +71,8 @@
 
     <record id="action_print_pdf" model="ir.actions.report">
         <field name="name">Query result</field>
-        <field name="model">pdforientation</field>
-        <field name="report_name">query_deluxe.pdf</field>
+        <field name="model">querydeluxe</field>
+        <field name="report_name">query_deluxe.pdf_layout</field>
         <field name="report_type">qweb-pdf</field>
         <field name="paperformat_id" ref="query_deluxe.paperformat"/>
     </record>
