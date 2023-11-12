@@ -8,8 +8,10 @@ You can type queries involving SELECT statement and many clauses like WHERE, AND
 
 The result is correctly presented in a table form and you can print your table's result in a PDF or XLSX format.
 
-Fir XLSX format, you have to use an additional module available at <b>https://apps.odoo.com/apps/modules/17.0/query_deluxe_xlsx</b>
-This last depends on the module 'report_xlsx' that should be available at <b>https://apps.odoo.com/apps/modules/17.0/report_xlsx</b>
+Fir XLSX format, you have to use an additional module available at
+https://apps.odoo.com/apps/modules/17.0/query_deluxe_xlsx
+This last depends on the module 'report_xlsx' that should be available at
+https://apps.odoo.com/apps/modules/17.0/report_xlsx
 
 You can also make UPDATE, DELETE, CREATE, INSERT, ALTER and DROP statements.
 
