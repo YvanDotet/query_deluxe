@@ -7,7 +7,7 @@
 		<field name="arch" type="xml">
 			<tree>
 				<field name="name" string="Query"/>
-				<field name="note" string="Note"/>
+				<field name="note" string="Note" optional="show"/>
 			</tree>
 		</field>
 	</record>
@@ -19,7 +19,7 @@
 			<form>
 				<header>
 					<button name="print_result_pdf" string="Print PDF" type="object" class="oe_highlight btn-danger" invisible="raw_output in ['',[],False]"/>
-					<button name="print_result_excel" string="Print EXCEL" type="object" class="oe_highlight btn-success" invisible="raw_output in ['',[],False]"/>
+					<button name="print_result_excel" string="Print XLSX" type="object" class="oe_highlight btn-success" invisible="raw_output in ['',[],False]"/>
 				</header>
 
 				<sheet>

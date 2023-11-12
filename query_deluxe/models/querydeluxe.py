@@ -39,9 +39,27 @@ class QueryDeluxe(models.Model):
         if not self.env['ir.module.module'].search([('name', '=', 'query_deluxe_xlsx'), ('state', '=', 'installed')]):
             raise exceptions.ValidationError(_("""
             Please install the module 'query_deluxe_xlsx', that depends on the module 'report_xlsx'.\n 
-            The module 'query_deluxe_xlsx' is available at .\n 
-            The module 'report_xlsx' is available at 'https://apps.odoo.com/apps/modules/17.0/report_xlsx'.
+            The module 'query_deluxe_xlsx' is available at \n https://apps.odoo.com/apps/modules/17.0/query_deluxe_xlsx \n 
+            The module 'report_xlsx' is available at \n https://apps.odoo.com/apps/modules/17.0/report_xlsx \n
             """))
+
+    def get_result_from_query(self, query):
+        headers = []
+        datas = []
+
+        try:
+            self.env.cr.execute(query)
+        except Exception as e:
+            raise exceptions.UserError(e)
+
+        try:
+            if self.env.cr.description:
+                headers = [d[0] for d in self.env.cr.description]
+                datas = self.env.cr.fetchall()
+        except Exception as e:
+            raise exceptions.UserError(e)
+
+        return headers, datas
 
     def execute(self):
         for record in self.sudo():
@@ -55,20 +73,7 @@ class QueryDeluxe(models.Model):
             if record.name:
                 record.message_post(body=str(record.name))
 
-                headers = []
-                datas = []
-
-                try:
-                    record.env.cr.execute(record.name)
-                except Exception as e:
-                    raise exceptions.UserError(e)
-
-                try:
-                    if record.env.cr.description:
-                        headers = [d[0] for d in record.env.cr.description]
-                        datas = record.env.cr.fetchall()
-                except Exception as e:
-                    raise exceptions.UserError(e)
+                headers, datas = self.get_result_from_query(record.name)
 
                 rowcount = record.env.cr.rowcount
                 record.rowcount = _("{0} row{1} processed").format(rowcount, 's' if 1 < rowcount else '')

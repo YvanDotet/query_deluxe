@@ -1,5 +1,5 @@
 from odoo import api, fields, models, _
-from odoo.exceptions import UserError
+from odoo import exceptions
 
 
 class PdfOrientation(models.TransientModel):
@@ -14,17 +14,21 @@ class PdfOrientation(models.TransientModel):
 
     def print_pdf(self):
         self = self.sudo()
+        self.ensure_one()
+
+        headers, bodies = self.env['querydeluxe'].get_result_from_query(self.query_name)
+
         try:
             self.env.cr.execute(self.query_name)
         except Exception as e:
-            raise UserError(e)
+            raise exceptions.UserError(e)
 
         try:
             if self.env.cr.description:
                 headers = [d[0] for d in self.env.cr.description]
                 bodies = self.env.cr.fetchall()
         except Exception as e:
-            raise UserError(e)
+            raise exceptions.UserError(e)
 
         action_print_pdf = self.env.ref('query_deluxe.action_print_pdf')
         if self.orientation == 'landscape':
