@@ -4,7 +4,7 @@
         'author': 'Yvan Dotet',
         'depends': ['base', 'mail'],
         'application': True,
-        'version': '16.0.1.0.6',
+        'version': '17.0.0.1',
         'license': 'AGPL-3',
         'support': 'yvandotet@yahoo.fr',
         'website': 'https://github.com/YvanDotet/query_deluxe/',
@@ -14,7 +14,7 @@
             'security/security.xml',
             'security/ir.model.access.csv',
 
-            'views/query_deluxe_views.xml',
+            'views/querydeluxe.xml',
 
             'wizard/pdforientation.xml',
 

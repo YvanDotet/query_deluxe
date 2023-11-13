@@ -1,1 +1,1 @@
-from . import query_deluxe
+from . import querydeluxe
