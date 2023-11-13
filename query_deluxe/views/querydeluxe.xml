@@ -54,7 +54,10 @@
 					</group>
 
 					<group>
-						<field name="html" readonly="1" nolabel="1"/>
+						<label string="" for="html"/>
+						<div class="o_row">
+							<field name="html" readonly="1"/>
+						</div>
 					</group>
 
 					<div class="oe_chatter">

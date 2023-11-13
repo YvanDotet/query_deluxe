@@ -9,7 +9,7 @@ class QueryDeluxe(models.Model):
 
     def get_default_caution_html(self):
         return _("""
-        <div style='width: 100%'>
+        <div>
             <span style='color: red'>Be careful</span>, the printing buttons will execute the query <span style='color: red; text-decoration: underline'>one more time</span> on your database in order to get-back the datas used to print the result.
             <br/>
             For example, query with <span style='color: orange'>CREATE</span> or <span style='color: orange'>UPDATE</span> statement without any 'RETURNING' statement will not necessary print a table unlike <span style='color: blue'>SELECT</span> statement,
@@ -48,6 +48,7 @@ class QueryDeluxe(models.Model):
 
     def print_result_excel(self):
         self.ensure_one()
+        self=self.sudo()
 
         if not self.env['ir.module.module'].search([('name', '=', 'query_deluxe_xlsx'), ('state', '=', 'installed')]):
             raise exceptions.ValidationError(_("""
