@@ -10,6 +10,7 @@ The result is correctly presented in a table form and you can print your table's
 
 Fir XLSX format, you have to use an additional module available at
 https://apps.odoo.com/apps/modules/17.0/query_deluxe_xlsx
+
 This last depends on the module 'report_xlsx' that should be available at
 https://apps.odoo.com/apps/modules/17.0/report_xlsx
 

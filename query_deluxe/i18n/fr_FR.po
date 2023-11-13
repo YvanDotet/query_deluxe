@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-12 23:02+0000\n"
-"PO-Revision-Date: 2023-11-12 23:02+0000\n"
+"POT-Creation-Date: 2023-11-13 01:29+0000\n"
+"PO-Revision-Date: 2023-11-13 01:29+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -41,6 +41,35 @@ msgstr ""
 " https://apps.odoo.com/apps/modules/17.0/report_xlsx \n"
 "\n"
 "            "
+
+#. module: query_deluxe
+#. odoo-python
+#: code:addons/query_deluxe/models/querydeluxe.py:0
+#, python-format
+msgid ""
+"\n"
+"        <div style='width: 100%'>\n"
+"            <span style='color: red'>Be careful</span>, the printing buttons will execute the query <span style='color: red; text-decoration: underline'>one more time</span> on your database in order to get-back the datas used to print the result.\n"
+"            <br/>\n"
+"            For example, query with <span style='color: orange'>CREATE</span> or <span style='color: orange'>UPDATE</span> statement without any 'RETURNING' statement will not necessary print a table unlike <span style='color: blue'>SELECT</span> statement,\n"
+"            <br/>\n"
+"            <span style='text-decoration: underline'>but it will still be executed one time in the background during the attempt of printing process</span>.\n"
+"            <br/>\n"
+"            So when you want to print the result, use preferably 'SELECT' statement to be sure to not execute an unwanted query twice.\n"
+"        </div>\n"
+"        "
+msgstr ""
+"\n"
+"        <div style='width: 100%'>\n"
+"            <span style='color: red'>Attention</span>, les boutons d'impression exécuteront la requête <span style='color: red; text-decoration: underline'>une nouvelle fois</span> sur votre base de données afin de récupérer les données utilisées pour imprimer le résultat.\n"
+"            <br/>\n"
+"            Par exemple, une requête avec une instruction <span style='color: orange'>CREATE</span> ou <span style='color: orange'>UPDATE</span> sans aucune instruction 'RETURNING' n'imprimera pas nécessairement une table contrairement à l'instruction <span style='color: blue'>SELECT</span>,\n"
+"            <br/>\n"
+"            <span style='text-decoration: underline'>mais elle sera tout de même exécutée une fois en arrière-plan lors de la tentative d'impression</span>.\n"
+"            <br/>\n"
+"            Ainsi, lorsque vous souhaitez imprimer le résultat, utilisez de préférence l'instruction 'SELECT' pour être sûr de ne pas exécuter deux fois une requête indésirable.\n"
+"        </div>\n"
+"        "
 
 #. module: query_deluxe
 #: model:res.groups,name:query_deluxe.group_querydeluxe
@@ -88,6 +117,11 @@ msgid "Attachment Count"
 msgstr ""
 
 #. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__caution_html
+msgid "CAUTION"
+msgstr "ATTENTION"
+
+#. module: query_deluxe
 #: model_terms:ir.ui.view,arch_db:query_deluxe.pdforientation_form
 msgid "Cancel"
 msgstr "Annuler"
@@ -133,7 +167,7 @@ msgstr "Nom affiché"
 #: model:querydeluxe,note:query_deluxe.select_res_partner
 msgid ""
 "Display all the records of res.partner's model, with name, phone and email "
-"attributes."
+"attributes"
 msgstr ""
 "Affiche tous les enregistrements du modèle de res.partner, avec leur noms, "
 "numéros de téléphone et emails"
@@ -192,6 +226,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__has_message
 msgid "Has Message"
 msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__understand
+msgid "I understand"
+msgstr "J'ai compris"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__id

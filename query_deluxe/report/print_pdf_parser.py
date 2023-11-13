@@ -11,7 +11,6 @@ class PrintPdfParser(models.AbstractModel):
 
     @api.model
     def _get_report_values(self, docids, data=None):
-        print(data)
         return {
             'doc_ids': self.env['querydeluxe'].browse(docids),
             'doc_model': 'querydeluxe',
