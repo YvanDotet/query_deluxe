@@ -7,6 +7,14 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <group invisible="understand" style="border-top: 3px dashed red; border-bottom: 3px dashed red">
+                        <field name="caution_html" readonly="1"/>
+                    </group>
+
+                    <group invisible="understand">
+						<field name="understand" widget="boolean_toggle" style="color: blue"/>
+					</group>
+
                     <group>
                         <field name="query_id" invisible="1"/>
                         <field name="name" invisible="0" readonly="1"/>

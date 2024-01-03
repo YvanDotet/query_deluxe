@@ -22,14 +22,6 @@
 				</header>
 
 				<sheet>
-					<group invisible="understand" style="border: 1px solid red">
-						<field name="caution_html" readonly="1"/>
-					</group>
-
-					<group invisible="understand">
-						<field name="understand" widget="boolean_toggle"/>
-					</group>
-
 					<group string="Type a query">
 						<label string="Query :" for="name"/>
 						<div class="o_row">
