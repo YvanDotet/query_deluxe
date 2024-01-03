@@ -19,7 +19,6 @@
 			<form>
 				<header>
 					<button name="print_result_pdf" string="Print PDF" type="object" class="oe_highlight btn-danger"/>
-					<button name="print_result_excel" string="Print XLSX" type="object" class="oe_highlight btn-success" invisible="True"/>
 				</header>
 
 				<sheet>

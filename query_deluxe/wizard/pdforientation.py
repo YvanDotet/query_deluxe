@@ -13,6 +13,7 @@ class PdfOrientation(models.TransientModel):
     query_id = fields.Many2one('querydeluxe', string="Query")
 
     def print_pdf(self):
+        self = self.sudo()
         self.ensure_one()
 
         action_print_pdf = self.env.ref('query_deluxe.action_print_pdf')

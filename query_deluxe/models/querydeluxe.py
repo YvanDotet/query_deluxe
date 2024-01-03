@@ -32,6 +32,7 @@ class QueryDeluxe(models.Model):
     note = fields.Char(string="Note", help="Optional helpful note about the current query, what it does, the dangers, etc...", translate=True)
 
     def print_result_pdf(self):
+        self = self.sudo()
         self.ensure_one()
 
         return {
@@ -45,17 +46,6 @@ class QueryDeluxe(models.Model):
                 'default_query_id': self.id
             },
         }
-
-    def print_result_excel(self):
-        self.ensure_one()
-        self=self.sudo()
-
-        if not self.env['ir.module.module'].search([('name', '=', 'query_deluxe_xlsx'), ('state', '=', 'installed')]):
-            raise exceptions.ValidationError(_("""
-            Please install the module 'query_deluxe_xlsx', that depends on the module 'report_xlsx'.\n 
-            The module 'query_deluxe_xlsx' is available at \n https://apps.odoo.com/apps/modules/17.0/query_deluxe_xlsx \n 
-            The module 'report_xlsx' should be available at \n https://apps.odoo.com/apps/modules/17.0/report_xlsx \n
-            """))
 
     def get_result_from_query(self, query):
         self = self.sudo()
