@@ -19,18 +19,9 @@
 			<form>
 				<header>
 					<button name="print_result_pdf" string="Print PDF" type="object" class="oe_highlight btn-danger"/>
-					<button name="print_result_excel" string="Print XLSX" type="object" class="oe_highlight btn-success" invisible="True"/>
 				</header>
 
 				<sheet>
-					<group invisible="understand" style="border: 1px solid red">
-						<field name="caution_html" readonly="1"/>
-					</group>
-
-					<group invisible="understand">
-						<field name="understand" widget="boolean_toggle"/>
-					</group>
-
 					<group string="Type a query">
 						<label string="Query :" for="name"/>
 						<div class="o_row">

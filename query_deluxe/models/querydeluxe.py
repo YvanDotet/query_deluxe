@@ -7,23 +7,7 @@ class QueryDeluxe(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _order = "id desc"
 
-    def get_default_caution_html(self):
-        return _("""
-        <div>
-            <span style='color: red'>Be careful</span>, the printing buttons will execute the query <span style='color: red; text-decoration: underline'>one more time</span> on your database in order to get-back the datas used to print the result.
-            <br/>
-            For example, query with <span style='color: orange'>CREATE</span> or <span style='color: orange'>UPDATE</span> statement without any 'RETURNING' statement will not necessary print a table unlike <span style='color: blue'>SELECT</span> statement,
-            <br/>
-            <span style='text-decoration: underline'>but it will still be executed one time in the background during the attempt of printing process</span>.
-            <br/>
-            So when you want to print the result, use preferably 'SELECT' statement to be sure to not execute an unwanted query twice.
-        </div>
-        """)
-
     active = fields.Boolean(string="Active", default=True)
-
-    caution_html = fields.Html(string="CAUTION", default=get_default_caution_html)
-    understand = fields.Boolean(string="I understand")
 
     rowcount = fields.Text(string='Rowcount')
     html = fields.Html(string='HTML')
@@ -32,6 +16,7 @@ class QueryDeluxe(models.Model):
     note = fields.Char(string="Note", help="Optional helpful note about the current query, what it does, the dangers, etc...", translate=True)
 
     def print_result_pdf(self):
+        self = self.sudo()
         self.ensure_one()
 
         return {
@@ -45,17 +30,6 @@ class QueryDeluxe(models.Model):
                 'default_query_id': self.id
             },
         }
-
-    def print_result_excel(self):
-        self.ensure_one()
-        self=self.sudo()
-
-        if not self.env['ir.module.module'].search([('name', '=', 'query_deluxe_xlsx'), ('state', '=', 'installed')]):
-            raise exceptions.ValidationError(_("""
-            Please install the module 'query_deluxe_xlsx', that depends on the module 'report_xlsx'.\n 
-            The module 'query_deluxe_xlsx' is available at \n https://apps.odoo.com/apps/modules/17.0/query_deluxe_xlsx \n 
-            The module 'report_xlsx' should be available at \n https://apps.odoo.com/apps/modules/17.0/report_xlsx \n
-            """))
 
     def get_result_from_query(self, query):
         self = self.sudo()
