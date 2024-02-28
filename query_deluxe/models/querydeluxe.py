@@ -16,6 +16,9 @@ class QueryDeluxe(models.Model):
     note = fields.Char(string="Note", help="Optional helpful note about the current query, what it does, the dangers, etc...", translate=True)
 
     def print_result_pdf(self):
+        return self._print_result_pdf()
+
+    def _print_result_pdf(self):
         self = self.sudo()
         self.ensure_one()
 
@@ -31,7 +34,7 @@ class QueryDeluxe(models.Model):
             },
         }
 
-    def get_result_from_query(self, query):
+    def _get_result_from_query(self, query):
         self = self.sudo()
         headers = []
         datas = []
@@ -52,6 +55,9 @@ class QueryDeluxe(models.Model):
         return headers, datas
 
     def execute(self):
+        return self._execute()
+
+    def _execute(self):
         for record in self.sudo():
             record.rowcount = ''
             record.html = '<br></br>'
@@ -59,7 +65,7 @@ class QueryDeluxe(models.Model):
             if record.name:
                 record.message_post(body=str(record.name))
 
-                headers, datas = self.get_result_from_query(record.name)
+                headers, datas = self._get_result_from_query(record.name)
 
                 rowcount = record.env.cr.rowcount
                 record.rowcount = _("{0} row{1} processed").format(rowcount, 's' if 1 < rowcount else '')
