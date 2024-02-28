@@ -16,9 +16,6 @@ class QueryDeluxe(models.Model):
     note = fields.Char(string="Note", help="Optional helpful note about the current query, what it does, the dangers, etc...", translate=True)
 
     def print_result_pdf(self):
-        return self._print_result_pdf()
-
-    def _print_result_pdf(self):
         self = self.sudo()
         self.ensure_one()
 
