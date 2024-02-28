@@ -31,7 +31,7 @@ class QueryDeluxe(models.Model):
             },
         }
 
-    def get_result_from_query(self, query):
+    def _get_result_from_query(self, query):
         self = self.sudo()
         headers = []
         datas = []
@@ -59,7 +59,7 @@ class QueryDeluxe(models.Model):
             if record.name:
                 record.message_post(body=str(record.name))
 
-                headers, datas = self.get_result_from_query(record.name)
+                headers, datas = self._get_result_from_query(record.name)
 
                 rowcount = record.env.cr.rowcount
                 record.rowcount = _("{0} row{1} processed").format(rowcount, 's' if 1 < rowcount else '')
