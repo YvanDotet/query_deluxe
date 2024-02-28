@@ -55,9 +55,6 @@ class QueryDeluxe(models.Model):
         return headers, datas
 
     def execute(self):
-        return self._execute()
-
-    def _execute(self):
         for record in self.sudo():
             record.rowcount = ''
             record.html = '<br></br>'

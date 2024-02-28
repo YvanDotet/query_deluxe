@@ -5,10 +5,10 @@ class PdfOrientation(models.TransientModel):
     _name = 'pdforientation'
     _description = "Select the orientation of the pdf"
 
-    def _orientation_choices(self):
+    def orientation_choices(self):
         return [('landscape', _('Landscape')), ('portrait', _('Portrait'))]
 
-    def _get_default_caution_html(self):
+    def get_default_caution_html(self):
         return _("""
         <div>
             <span style='color: red'>Be careful</span>, it will execute the query <span style='color: red; text-decoration: underline'>one more time</span> on your database in order to get-back the datas used to print the result.
@@ -21,16 +21,13 @@ class PdfOrientation(models.TransientModel):
         </div>
         """)
 
-    orientation = fields.Selection(string="PDF orientation", selection=_orientation_choices, default='landscape')
+    orientation = fields.Selection(string="PDF orientation", selection=orientation_choices, default='landscape')
     name = fields.Text(string="Query")
     query_id = fields.Many2one('querydeluxe', string="Query")
-    caution_html = fields.Html(string="CAUTION", default=_get_default_caution_html)
+    caution_html = fields.Html(string="CAUTION", default=get_default_caution_html)
     understand = fields.Boolean(string="I understand")
 
     def print_pdf(self):
-        return self._print_pdf()
-
-    def _print_pdf(self):
         self = self.sudo()
         self.ensure_one()
 
