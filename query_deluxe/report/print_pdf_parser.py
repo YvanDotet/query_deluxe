@@ -5,8 +5,8 @@ class PrintPdfParser(models.AbstractModel):
     _name = 'report.query_deluxe.pdf_layout'
     _description = 'Print pdf parser'
 
-    def get_datas(self, doc):
-        headers, bodies = self.env['querydeluxe'].get_result_from_query(doc.name)
+    def _get_datas(self, doc):
+        headers, bodies = self.env['querydeluxe']._get_result_from_query(doc.name)
         return headers, bodies
 
     @api.model
@@ -15,5 +15,5 @@ class PrintPdfParser(models.AbstractModel):
             'doc_ids': self.env['querydeluxe'].browse(docids),
             'doc_model': 'querydeluxe',
             'data': data,
-            'get_datas': self.get_datas
+            'get_datas': self._get_datas
         }
