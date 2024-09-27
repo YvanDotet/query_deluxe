@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+
+<odoo>
+	<record id="querydeluxe_list" model="ir.ui.view">
+		<field name="name">querydeluxe list</field>
+		<field name="model">querydeluxe</field>
+		<field name="arch" type="xml">
+			<list>
+				<field name="name" string="Query"/>
+				<field name="note" string="Note" optional="show"/>
+			</list>
+		</field>
+	</record>
+
+	<record id="querydeluxe_form" model="ir.ui.view">
+		<field name="name">querydeluxe form</field>
+		<field name="model">querydeluxe</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>
+					<button name="print_result_pdf" string="Print PDF" type="object" class="oe_highlight btn-danger"/>
+				</header>
+
+				<sheet>
+					<group string="Type a query">
+						<label string="Query :" for="name"/>
+						<div class="o_row">
+							<field name="name" placeholder="SELECT * FROM res_partner" style="border-bottom: 1px solid blue"/>
+						</div>
+					</group>
+
+					<group>
+						<button name="execute" type="object" string="Execute" class="oe_highlight"/>
+					</group>
+
+					<group>
+						<field name="note" placeholder="This query is used to ..."/>
+					</group>
+
+					<group>
+						<label string=" " for="rowcount"/>
+						<div class="o_row">
+							<field name="rowcount" readonly="1" nolabel="1"/>
+						</div>
+					</group>
+
+					<group>
+						<label string="" for="html"/>
+						<div class="o_row">
+							<field name="html" readonly="1"/>
+						</div>
+					</group>
+
+					<chatter/>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="querydeluxe_search" model="ir.ui.view">
+		<field name="name">querydeluxe search</field>
+		<field name="model">querydeluxe</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name" string="Query"/>
+				<field name="note"/>
+                <group name="filter" string="Filter">
+                    <filter name="with_note" string="With note" domain="[('note', '!=', False)]"/>
+					<separator/>
+                    <filter name="active" string="Only active" domain="[('active', '=', True)]"/>
+                    <filter name="archive" string="Only archived" domain="[('active', '=', False)]"/>
+                </group>
+                <group name="group_by" string="Group by">
+                    <filter name="name" string="Query" context="{'group_by': 'name'}"/>
+                    <filter name="note" string="Note" context="{'group_by': 'note'}"/>
+				</group>
+			</search>
+		</field>
+	</record>
+
+	<record model='ir.actions.act_window' id='querydeluxe_action'>
+        <field name="name">Create a new query</field>
+        <field name="res_model">querydeluxe</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+	<menuitem id="query_deluxe_app_menu" name="Query Deluxe" sequence="-1" groups="query_deluxe.group_querydeluxe" web_icon="query_deluxe,static/description/icon.png"/>
+	<menuitem id="querydeluxe_menu" parent="query_deluxe.query_deluxe_app_menu" name="Queries" sequence="-1" groups="query_deluxe.group_querydeluxe" action="query_deluxe.querydeluxe_action"/>
+</odoo>
