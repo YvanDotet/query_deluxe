@@ -3,7 +3,7 @@
 <odoo>
     <template id="pdf_layout">
         <t t-call="web.html_container">
-            <t t-foreach="doc_ids" t-as="doc">
+            <t t-foreach="docs" t-as="doc">
                 <div class="header"/>
 
                 <div class="article">
@@ -11,7 +11,7 @@
                         <span t-field="doc.name"/>
                     </div>
 
-                    <t t-set="results" t-value="get_datas(doc)"/>
+                    <t t-set="results" t-value="doc._get_result_from_query(doc.name)"/>
                     <t t-set="headers" t-value="results[0]"/>
                     <t t-set="bodies" t-value="results[1]"/>
 
@@ -23,7 +23,7 @@
 
                                     <t t-foreach="headers" t-as="header">
                                         <th style='border: 1px solid black'>
-                                            <t t-esc="str(header)"/>
+                                            <t t-out="str(header)"/>
                                         </th>
                                     </t>
                                 </tr>
@@ -33,12 +33,12 @@
                                 <t t-foreach="bodies" t-as="body">
                                     <tr t-att-style="'background-color: {0}'.format('cyan' if body_index%2==1 else 'white')">
                                         <td style='border-right: 3px double; border-bottom: 1px solid black; background-color: yellow'>
-                                            <t t-esc="1+body_index"/>
+                                            <t t-out="1+body_index"/>
                                         </td>
 
                                         <t t-foreach="body" t-as="value">
                                             <td style="border: 1px solid black">
-                                                <t t-esc="str(value) if (value is not None) else ''"/>
+                                                <t t-out="str(value) if (value is not None) else ''"/>
                                             </td>
                                         </t>
                                     </tr>

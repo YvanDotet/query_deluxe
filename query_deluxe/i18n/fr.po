@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0+e\n"
+"Project-Id-Version: Odoo Server 18.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-03 21:44+0000\n"
-"PO-Revision-Date: 2024-01-03 21:44+0000\n"
+"POT-Creation-Date: 2024-09-27 18:55+0000\n"
+"PO-Revision-Date: 2024-09-27 18:55+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,6 @@ msgstr ""
 #. module: query_deluxe
 #. odoo-python
 #: code:addons/query_deluxe/wizard/pdforientation.py:0
-#, python-format
 msgid ""
 "\n"
 "        <div>\n"
@@ -247,7 +246,6 @@ msgstr ""
 #. module: query_deluxe
 #. odoo-python
 #: code:addons/query_deluxe/wizard/pdforientation.py:0
-#, python-format
 msgid "Landscape"
 msgstr "Paysage"
 
@@ -320,8 +318,8 @@ msgstr ""
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__note
+#: model_terms:ir.ui.view,arch_db:query_deluxe.querydeluxe_list
 #: model_terms:ir.ui.view,arch_db:query_deluxe.querydeluxe_search
-#: model_terms:ir.ui.view,arch_db:query_deluxe.querydeluxe_tree
 msgid "Note"
 msgstr ""
 
@@ -372,7 +370,6 @@ msgstr "Orientation du PDF"
 #. module: query_deluxe
 #. odoo-python
 #: code:addons/query_deluxe/wizard/pdforientation.py:0
-#, python-format
 msgid "Portrait"
 msgstr ""
 
@@ -392,11 +389,6 @@ msgid "Print PDF"
 msgstr "Imprimer PDF"
 
 #. module: query_deluxe
-#: model:ir.model,name:query_deluxe.model_report_query_deluxe_pdf_layout
-msgid "Print pdf parser"
-msgstr ""
-
-#. module: query_deluxe
 #: model:ir.ui.menu,name:query_deluxe.querydeluxe_menu
 msgid "Queries"
 msgstr "Requêtes"
@@ -404,8 +396,8 @@ msgstr "Requêtes"
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__name
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__query_id
+#: model_terms:ir.ui.view,arch_db:query_deluxe.querydeluxe_list
 #: model_terms:ir.ui.view,arch_db:query_deluxe.querydeluxe_search
-#: model_terms:ir.ui.view,arch_db:query_deluxe.querydeluxe_tree
 msgid "Query"
 msgstr "Requête"
 
@@ -442,7 +434,6 @@ msgstr ""
 #. module: query_deluxe
 #. odoo-python
 #: code:addons/query_deluxe/models/querydeluxe.py:0
-#, python-format
 msgid "Select orientation of the PDF's result"
 msgstr "Sélectionner l'orientation du PDF"
 
@@ -512,6 +503,5 @@ msgstr "Avec une note"
 #. module: query_deluxe
 #. odoo-python
 #: code:addons/query_deluxe/models/querydeluxe.py:0
-#, python-format
 msgid "{0} row{1} processed"
 msgstr "{0} ligne{1} traitée{1}"
