@@ -42,13 +42,13 @@
 
     <record id="with_product_table" model="querydeluxe">
         <field name="name">
-            WITH temporary_table AS (
-                SELECT pt.id AS pt_id, pp.id AS pp_id
-                FROM product_template pt
-                LEFT JOIN product_product pp
-                ON pp.product_tmpl_id = pt.id
-            )
-            SELECT * FROM temporary_table ORDER BY pt_id;
+WITH temporary_table AS (
+    SELECT pt.id AS pt_id, pp.id AS pp_id
+    FROM product_template pt
+    LEFT JOIN product_product pp
+    ON pp.product_tmpl_id = pt.id
+)
+SELECT * FROM temporary_table ORDER BY pt_id;
         </field>
         <field name="note">Associate each product template with their product variant</field>
     </record>

@@ -16,20 +16,20 @@ class QueryDeluxe(models.Model):
     note = fields.Char(string="Note", help="Optional helpful note about the current query, what it does, the dangers, etc...", translate=True)
 
     def print_result_pdf(self):
-        self = self.sudo()
-        self.ensure_one()
-
-        return {
-            'name': _("Select orientation of the PDF's result"),
-            'view_mode': 'form',
-            'res_model': 'pdforientation',
-            'type': 'ir.actions.act_window',
-            'target': 'new',
-            'context': {
-                'default_name': self.name,
-                'default_query_id': self.id
-            },
-        }
+        if self:
+            self = self.sudo()
+            first = self[0]
+            return {
+                'name': _("Select orientation of the PDF's result"),
+                'view_mode': 'form',
+                'res_model': 'pdforientation',
+                'type': 'ir.actions.act_window',
+                'target': 'new',
+                'context': {
+                    'default_name': first.name,
+                    'default_query_id': first.id
+                },
+            }
 
     def _get_result_from_query(self, query):
         self = self.sudo()
@@ -53,8 +53,10 @@ class QueryDeluxe(models.Model):
 
     def execute(self):
         for record in self.sudo():
-            record.rowcount = ''
-            record.html = '<br></br>'
+            vals = {
+                "rowcount": False,
+                "html": False
+            }
 
             if record.name:
                 record.message_post(body=str(record.name))
@@ -62,7 +64,7 @@ class QueryDeluxe(models.Model):
                 headers, datas = self._get_result_from_query(record.name)
 
                 rowcount = record.env.cr.rowcount
-                record.rowcount = _("{0} row{1} processed").format(rowcount, 's' if 1 < rowcount else '')
+                vals["rowcount"] = _("{0} row{1} processed").format(rowcount, 's' if 1 < rowcount else '')
 
                 if headers and datas:
                     header_html = "<tr style='background-color: lightgrey'> <th style='background-color:white'/>"
@@ -82,7 +84,7 @@ class QueryDeluxe(models.Model):
                         body_line += "</tr>"
                         body_html += body_line
 
-                    record.html = """
+                    vals["html"] = """
                     <table style="text-align: center">
                         <thead">
                             {0}
@@ -93,3 +95,4 @@ class QueryDeluxe(models.Model):
                         </tbody>
                     </table>
                     """.format(header_html, body_html)
+            record.update(vals)

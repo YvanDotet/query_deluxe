@@ -28,12 +28,12 @@ class PdfOrientation(models.TransientModel):
     understand = fields.Boolean(string="I understand")
 
     def print_pdf(self):
-        self = self.sudo()
-        self.ensure_one()
-
-        action_print_pdf = self.env.ref('query_deluxe.action_print_pdf')
-        if self.orientation == 'landscape':
-            action_print_pdf.paperformat_id.orientation = "Landscape"
-        elif self.orientation == 'portrait':
-            action_print_pdf.paperformat_id.orientation = "Portrait"
-        return action_print_pdf.report_action(self.query_id)
+        if self:
+            self = self.sudo()
+            first = self[0]
+            action_print_pdf = self.env.ref('query_deluxe.action_print_pdf')
+            if first.orientation == 'landscape':
+                action_print_pdf.paperformat_id.orientation = "Landscape"
+            elif first.orientation == 'portrait':
+                action_print_pdf.paperformat_id.orientation = "Portrait"
+            return action_print_pdf.report_action(first.query_id)
