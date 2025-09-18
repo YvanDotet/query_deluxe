@@ -5,10 +5,10 @@
     </record>
 
     <record id="base.group_system" model="res.groups">
-        <field name="implied_ids" eval="[(4, ref('query_deluxe.group_querydeluxe'))]"/>
+        <field name="implied_ids" eval="[Command.link(ref('query_deluxe.group_querydeluxe'))]"/>
     </record>
 
     <record id="base.group_erp_manager" model="res.groups">
-        <field name="implied_ids" eval="[(4, ref('query_deluxe.group_querydeluxe'))]"/>
+        <field name="implied_ids" eval="[Command.link(ref('query_deluxe.group_querydeluxe'))]"/>
     </record>
 </odoo>

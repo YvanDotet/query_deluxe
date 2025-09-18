@@ -64,13 +64,13 @@
 			<search>
 				<field name="name" string="Query"/>
 				<field name="note"/>
-                <group name="filter" string="Filter">
+                <group name="filter">
                     <filter name="with_note" string="With note" domain="[('note', '!=', False)]"/>
 					<separator/>
                     <filter name="active" string="Only active" domain="[('active', '=', True)]"/>
                     <filter name="archive" string="Only archived" domain="[('active', '=', False)]"/>
                 </group>
-                <group name="group_by" string="Group by">
+                <group name="group_by">
                     <filter name="name" string="Query" context="{'group_by': 'name'}"/>
                     <filter name="note" string="Note" context="{'group_by': 'note'}"/>
 				</group>

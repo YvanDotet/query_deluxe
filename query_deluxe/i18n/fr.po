@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0+e\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-27 18:55+0000\n"
-"PO-Revision-Date: 2024-09-27 18:55+0000\n"
+"POT-Creation-Date: 2025-09-17 23:42+0000\n"
+"PO-Revision-Date: 2025-09-17 23:42+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -160,11 +160,6 @@ msgid "Execute"
 msgstr "Exécuter"
 
 #. module: query_deluxe
-#: model_terms:ir.ui.view,arch_db:query_deluxe.querydeluxe_search
-msgid "Filter"
-msgstr "Filtrer"
-
-#. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__message_follower_ids
 msgid "Followers"
 msgstr "Abonnés"
@@ -183,11 +178,6 @@ msgstr ""
 #: model:querydeluxe,note:query_deluxe.alter_database_rename
 msgid "Give a new name to a database"
 msgstr "Donne un nouveau nom à une base de données"
-
-#. module: query_deluxe
-#: model_terms:ir.ui.view,arch_db:query_deluxe.querydeluxe_search
-msgid "Group by"
-msgstr "Grouper par"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_querydeluxe__html
@@ -395,7 +385,6 @@ msgstr "Requêtes"
 
 #. module: query_deluxe
 #: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__name
-#: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__query_id
 #: model_terms:ir.ui.view,arch_db:query_deluxe.querydeluxe_list
 #: model_terms:ir.ui.view,arch_db:query_deluxe.querydeluxe_search
 msgid "Query"
@@ -410,6 +399,11 @@ msgstr "Requête :"
 #: model:ir.ui.menu,name:query_deluxe.query_deluxe_app_menu
 msgid "Query Deluxe"
 msgstr ""
+
+#. module: query_deluxe
+#: model:ir.model.fields,field_description:query_deluxe.field_pdforientation__query_id
+msgid "Query origin"
+msgstr "Requête d'origine"
 
 #. module: query_deluxe
 #: model:ir.actions.report,name:query_deluxe.action_print_pdf
@@ -499,6 +493,12 @@ msgstr "Tapez la requête que vous souhaitez exécuter."
 #: model_terms:ir.ui.view,arch_db:query_deluxe.querydeluxe_search
 msgid "With note"
 msgstr "Avec une note"
+
+#. module: query_deluxe
+#. odoo-python
+#: code:addons/query_deluxe/wizard/pdforientation.py:0
+msgid "portrait"
+msgstr ""
 
 #. module: query_deluxe
 #. odoo-python

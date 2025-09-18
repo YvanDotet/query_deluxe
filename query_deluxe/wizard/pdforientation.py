@@ -23,7 +23,7 @@ class PdfOrientation(models.TransientModel):
 
     orientation = fields.Selection(string="PDF orientation", selection=orientation_choices, default='landscape')
     name = fields.Text(string="Query")
-    query_id = fields.Many2one('querydeluxe', string="Query")
+    query_id = fields.Many2one('querydeluxe', string="Query origin")
     caution_html = fields.Html(string="CAUTION", default=get_default_caution_html)
     understand = fields.Boolean(string="I understand")
 
