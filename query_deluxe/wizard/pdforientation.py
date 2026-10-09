@@ -1,4 +1,4 @@
-from odoo import api, fields, models, _
+from odoo import api, fields, models
 
 
 class PdfOrientation(models.TransientModel):
@@ -6,10 +6,10 @@ class PdfOrientation(models.TransientModel):
     _description = "Select the orientation of the pdf"
 
     def orientation_choices(self):
-        return [('landscape', _('Landscape')), ('portrait', _('Portrait'))]
+        return [('landscape', self.env._('Landscape')), ('portrait', self.env._('Portrait'))]
 
     def get_default_caution_html(self):
-        return _("""
+        return self.env._("""
         <div>
             <span style='color: red'>Be careful</span>, it will execute the query <span style='color: red; text-decoration: underline'>one more time</span> on your database in order to get-back the datas used to print the result.
             <br/>

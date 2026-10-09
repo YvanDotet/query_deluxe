@@ -1,4 +1,4 @@
-from odoo import api, fields, models, exceptions, _
+from odoo import api, fields, models, exceptions
 
 
 class QueryDeluxe(models.Model):
@@ -20,7 +20,7 @@ class QueryDeluxe(models.Model):
             self = self.sudo()
             first = self[0]
             return {
-                'name': _("Select orientation of the PDF's result"),
+                'name': self.env._("Select orientation of the PDF's result"),
                 'view_mode': 'form',
                 'res_model': 'pdforientation',
                 'type': 'ir.actions.act_window',
@@ -64,7 +64,7 @@ class QueryDeluxe(models.Model):
                 headers, datas = self._get_result_from_query(record.name)
 
                 rowcount = record.env.cr.rowcount
-                vals["rowcount"] = _("{0} row{1} processed").format(rowcount, 's' if 1 < rowcount else '')
+                vals["rowcount"] = self.env._("{0} row{1} processed").format(rowcount, 's' if 1 < rowcount else '')
 
                 if headers and datas:
                     header_html = "<tr style='background-color: lightgrey'> <th style='background-color:white'/>"

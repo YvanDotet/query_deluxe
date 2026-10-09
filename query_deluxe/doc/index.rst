@@ -15,7 +15,7 @@ Usage
 
 Go to "Apps" menu and type "query_deluxe" into the search box.
 
-Odoo version 19
+Odoo version 20
 
 Credits
 =======
