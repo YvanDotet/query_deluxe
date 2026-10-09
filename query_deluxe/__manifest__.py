@@ -1,0 +1,29 @@
+{
+        'name': 'PostgreSQL Query Deluxe',
+        'description': 'Execute postgreSQL query into Odoo interface',
+        'summary': "Make query interface, query odoo, postgre, postgreSQL query, query module",
+        'author': 'Yvan Dotet',
+        'depends': ['mail'],
+        'application': True,
+        'version': '20.0.0.1',
+        'license': 'AGPL-3',
+        'support': 'yvandotet@yahoo.fr',
+        'website': 'https://github.com/YvanDotet/query_deluxe/',
+        'installable': True,
+
+        'data': [
+            'security/security.xml',
+            'security/ir.access.csv',
+
+            'views/querydeluxe.xml',
+
+            'wizard/pdforientation.xml',
+
+            'report/print_pdf.xml',
+
+            'datas/data.xml'
+            ],
+
+        'images': ['static/description/banner.gif']
+}
+

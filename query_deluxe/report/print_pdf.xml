@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <template id="pdf_layout">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <div class="header"/>
+
+                <div class="article">
+                    <div style="text-align:center">
+                        <span t-field="doc.name"/>
+                    </div>
+
+                    <t t-set="results" t-value="doc._get_result_from_query(doc.name)"/>
+                    <t t-set="headers" t-value="results[0]"/>
+                    <t t-set="bodies" t-value="results[1]"/>
+
+                    <div t-if="headers and bodies">
+                        <table style="text-align: center">
+                            <thead style="background-color: lightgrey">
+                                <tr>
+                                    <th style='background-color:white'/>
+
+                                    <t t-foreach="headers" t-as="header">
+                                        <th style='border: 1px solid black'>
+                                            <t t-out="str(header)"/>
+                                        </th>
+                                    </t>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <t t-foreach="bodies" t-as="body">
+                                    <tr t-att-style="'background-color: {0}'.format('cyan' if body_index%2==1 else 'white')">
+                                        <td style='border-right: 3px double; border-bottom: 1px solid black; background-color: yellow'>
+                                            <t t-out="1+body_index"/>
+                                        </td>
+
+                                        <t t-foreach="body" t-as="value">
+                                            <td style="border: 1px solid black">
+                                                <t t-out="str(value) if (value is not None) else ''"/>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="footer"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="paperformat" model="report.paperformat">
+        <field name="name">Paperformat query deluxe</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">3</field>
+        <field name="margin_bottom">3</field>
+        <field name="margin_left">3</field>
+        <field name="margin_right">3</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">3</field>
+        <field name="dpi">80</field>
+    </record>
+
+    <record id="action_print_pdf" model="ir.actions.report">
+        <field name="name">Query result</field>
+        <field name="model">querydeluxe</field>
+        <field name="report_name">query_deluxe.pdf_layout</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="paperformat_id" ref="query_deluxe.paperformat"/>
+    </record>
+</odoo>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+    <record id="alter_database_rename" model="querydeluxe">
+        <field name="name">ALTER DATABASE mycurrentdatabasename RENAME TO newnamefordatabase;</field>
+        <field name="note">Give a new name to a database</field>
+    </record>
+
+    <record id="drop_table_mytable" model="querydeluxe">
+        <field name="name">DROP TABLE mytable;</field>
+        <field name="note">Drop the table 'mytable'</field>
+    </record>
+
+    <record id="insert_into_mytable" model="querydeluxe">
+        <field name="name">INSERT INTO mytable VALUES (30, 'first rec', 'this is the first record');</field>
+        <field name="note">Insert row in the table 'mytable' with the corresponding column and type</field>
+    </record>
+
+    <record id="create_table_mytable" model="querydeluxe">
+        <field name="name">CREATE TABLE mytable (id Integer, name char(10), description char(40));</field>
+        <field name="note">Create a table 'mytable' with a column for id,name and description</field>
+    </record>
+
+    <record id="select_res_partner_inner_join_sale_order" model="querydeluxe">
+        <field name="name">SELECT a.name,b.name FROM res_partner a INNER JOIN sale_order b ON a.id=b.partner_id;</field>
+        <field name="note">Select the clients linked with their sales orders</field>
+    </record>
+
+    <record id="delete_sale_order" model="querydeluxe">
+        <field name="name">DELETE FROM sale_order WHERE write_date &lt;= '2017-12-31'::date;</field>
+        <field name="note">Delete old sale_orders that was last modified before the 2018 year</field>
+    </record>
+
+    <record id="update_res_partner_email" model="querydeluxe">
+        <field name="name">UPDATE res_partner AS a SET email = CONCAT(a.name,'@company_mail.com');</field>
+        <field name="note">Modify all the email of the contact within the rule 'name of the contact'+'@company_mail.com'</field>
+    </record>
+
+    <record id="update_res_users_password" model="querydeluxe">
+        <field name="name">UPDATE res_users SET password = 'my_45_password' WHERE id = 10;</field>
+        <field name="note">Modify the password to 'my_45_password' for the user with id = 10</field>
+    </record>
+
+    <record id="with_product_table" model="querydeluxe">
+        <field name="name">
+WITH temporary_table AS (
+    SELECT pt.id AS pt_id, pp.id AS pp_id
+    FROM product_template pt
+    LEFT JOIN product_product pp
+    ON pp.product_tmpl_id = pt.id
+)
+SELECT * FROM temporary_table ORDER BY pt_id;
+        </field>
+        <field name="note">Associate each product template with their product variant</field>
+    </record>
+
+    <record id="select_sale_order" model="querydeluxe">
+        <field name="name">SELECT * FROM sale_order WHERE partner_id IN (SELECT id FROM res_partner WHERE name ILIKE '%Johnson%') LIMIT 5;</field>
+        <field name="note">Show only the 5 first records of sale.order's model where their client have 'Johnson' in their name</field>
+    </record>
+
+    <record id="select_versions" model="querydeluxe">
+        <field name="name">SELECT version();</field>
+        <field name="note">The version of that postgreSQL</field>
+    </record>
+
+    <record id="select_pg_user" model="querydeluxe">
+        <field name="name">SELECT * FROM pg_user;</field>
+        <field name="note">List of all the users using that postgreSQL</field>
+    </record>
+
+    <record id="select_datname_pg_database" model="querydeluxe">
+        <field name="name">SELECT datname FROM pg_database;</field>
+        <field name="note">List of all the databases inside that postgreSQL</field>
+    </record>
+
+    <record id="select_pg_catalog_pg_table" model="querydeluxe">
+        <field name="name">SELECT * FROM pg_catalog.pg_tables;</field>
+        <field name="note">Display all the tables inside that database</field>
+    </record>
+
+    <record id="select_res_partner" model="querydeluxe">
+        <field name="name">SELECT name,phone,email FROM res_partner;</field>
+        <field name="note">Display all the records of res.partner's model, with name, phone and email attributes</field>
+    </record>
+</odoo>
