@@ -1,4 +1,4 @@
-from odoo import api, fields, models, exceptions, _
+from odoo import api, fields, models, exceptions
 
 
 class QueryDeluxe(models.Model):
